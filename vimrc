@@ -17,13 +17,9 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'sjl/gundo.vim'
+Bundle 'nvie/vim-flake8'
 
 filetype plugin indent on     " required!
-
-                        """"""""""""""""""""""""""""""
-                        " BEGIN MartinPelikan vimrc  "
-                        "                            "
-                        """"""""""""""""""""""""""""""
 
 " Initialize Solarized
 syntax enable
@@ -52,16 +48,19 @@ set laststatus=2
 let g:Powerline_symbols = 'fancy'
 
 " Be case sensitive only when search expression contains an upper case character
-" When using search and replace, use \C to ensure case sensitive replacements
+" When using search and replace, use \C to ensure case sensitive
+" searches/replacements 
 set ignorecase
 set smartcase
-
-" TODO This disables pymode's folding, in the future make it only fold certain
-" sections with different colours
-let g:pymode_folding = 0
 
 " Backspace should not suck.
 set backspace=indent,eol,start
 
 " Always have NERDtree running
 let g:nerdtree_tabs_open_on_console_startup=1
+
+" Use F5 to toggle Gundo
+nnoremap <F5> :GundoToggle<CR>
+
+" Remove trailing whitespaces when saving a file
+autocmd BufWritePre *.py :%s/\s\+$//e
