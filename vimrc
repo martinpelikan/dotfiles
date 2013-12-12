@@ -10,7 +10,7 @@ Bundle 'gmarik/vundle'
 
 " Repos on github
 Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'Lokaltog/vim-easymotion'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
@@ -29,7 +29,7 @@ set t_Co=16
 
 " Save keystrokes, only one leader for easymotion
 " Remove if another plugin requires \
-let g:EasyMotion_leader_key = '<Leader>'
+" let g:EasyMotion_leader_key = '<Leader>'
 
 " Spacing and indenting settings
 set tabstop=4
@@ -64,3 +64,6 @@ nnoremap <F5> :GundoToggle<CR>
 
 " Remove trailing whitespaces when saving a file
 autocmd BufWritePre *.py :%s/\s\+$//e
+
+" Jump to definition 
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
