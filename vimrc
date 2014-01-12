@@ -19,6 +19,7 @@ Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'sjl/gundo.vim'
 Bundle 'nvie/vim-flake8'
 Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'tpope/vim-surround'
 
 filetype plugin indent on     " required!
 
