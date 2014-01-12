@@ -45,10 +45,3 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export TERM="xterm-256color"
-
-# Get your aliases set up - likely don't want all of these in dotfiles.
-source $HOME/.aliases
-
-# Set up all environment variables - likely don't want all of these in dotfiles.
-source $HOME/.zshenv
