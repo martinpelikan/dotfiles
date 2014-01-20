@@ -59,7 +59,7 @@ set autoindent
 set smarttab
 
 " Tabs are evil, make them obvious.
-set list listchars=tab:<-
+autocmd FileType python set list listchars=tab:<-
 
 " Line numbers help a fair bit.
 set number
