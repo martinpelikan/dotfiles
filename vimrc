@@ -8,18 +8,31 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
-" Repos on github
+" Sleek git integration
 Bundle 'tpope/vim-fugitive'
-" Bundle 'Lokaltog/vim-easymotion'
+" 16 colour 4 life
 Bundle 'altercation/vim-colors-solarized'
+" Recursive file search via partial strings
 Bundle 'kien/ctrlp.vim'
+" Best auto-completer ever
 Bundle 'Valloric/YouCompleteMe'
+" Nice file explorer 
 Bundle 'scrooloose/nerdtree'
+" The above, in a small side panel
 Bundle 'jistr/vim-nerdtree-tabs'
+" Visual illustration of un/re-do history
 Bundle 'sjl/gundo.vim'
+" Python linter
 Bundle 'nvie/vim-flake8'
+" Slightly smarter indentations for 'gq'
 Bundle 'hynek/vim-python-pep8-indent'
+" Add/change surroundings of text blocks
 Bundle 'tpope/vim-surround'
+" For a less horrible HTML editing time
+Bundle "mattn/emmet-vim"
+
+" Possibly enable later
+" Bundle 'Lokaltog/vim-easymotion'
 
 filetype plugin indent on     " required!
 
@@ -28,10 +41,6 @@ syntax enable
 set background=dark
 colorscheme solarized
 set t_Co=16
-
-" Save keystrokes, only one leader for easymotion
-" Remove if another plugin requires \
-" let g:EasyMotion_leader_key = '<Leader>'
 
 " Spacing and indenting settings
 set tabstop=4
@@ -64,7 +73,7 @@ let g:nerdtree_tabs_open_on_console_startup=1
 " Use F5 to toggle Gundo
 nnoremap <F5> :GundoToggle<CR>
 
-" Remove trailing whitespaces when saving a file
+" Remove trailing whitespaces when saving a .py file
 autocmd BufWritePre *.py :%s/\s\+$//e
 
 " Jump to definition 
