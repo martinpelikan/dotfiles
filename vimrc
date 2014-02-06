@@ -27,13 +27,13 @@ Bundle 'hynek/vim-python-pep8-indent'
 " Add/change surroundings of text blocks
 Bundle 'tpope/vim-surround'
 " For a less horrible HTML editing time
-Bundle "mattn/emmet-vim"
+Bundle 'mattn/emmet-vim'
 " Runs various installed linters/checkers based on file type
-Bundle "scrooloose/syntastic"
+Bundle 'scrooloose/syntastic'
 " Various convenient shortcuts for cycling/others
-Bundle "tpope/vim-unimpaired"
+Bundle 'tpope/vim-unimpaired'
 " Redundant whitespaces are redundant
-Bundle "bitc/vim-bad-whitespace"
+Bundle 'bitc/vim-bad-whitespace'
 
 " Possibly enable later
 " Bundle 'Lokaltog/vim-easymotion'
@@ -110,3 +110,4 @@ nnoremap <C-F12> <ESC>:Errors<CR>
 
 " Lint on write is annoying, use F12 instead.
 let g:syntastic_mode_map = {'mode': 'passive'}
+
