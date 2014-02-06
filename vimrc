@@ -54,9 +54,13 @@ let g:Powerline_symbols = 'fancy'
 " Spacing and indenting settings
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 set expandtab
 set autoindent
 set smarttab
+
+" Just two spaces for HTML/web content.
+autocmd Filetype html,xhtml,css,javascript set shiftwidth=2 tabstop=2 softtabstop=2
 
 " Tabs are evil, make them obvious.
 autocmd FileType python set list listchars=tab:<-
