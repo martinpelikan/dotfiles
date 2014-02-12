@@ -103,6 +103,9 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 " Jump to definition
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+" Close the preview window after we choose our autocompletion option
+let g:ycm_autoclose_preview_window_after_completion = 1
+
 " Run a linter/syntax checker with F12
 nnoremap <F12> <ESC>:SyntasticCheck<CR>
 " And list the Errors generated above with Ctrl + F12
