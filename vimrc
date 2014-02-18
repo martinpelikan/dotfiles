@@ -34,6 +34,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-unimpaired'
 " Redundant whitespaces are redundant
 Bundle 'bitc/vim-bad-whitespace'
+" Less insane indentations/syntax for JS
+Bundle 'vim-javascript'
 
 " Possibly enable later
 " Bundle 'Lokaltog/vim-easymotion'
@@ -59,11 +61,8 @@ set expandtab
 set autoindent
 set smarttab
 
-" Just two spaces for HTML/web content.
-autocmd Filetype html,xhtml,css,javascript set shiftwidth=2 tabstop=2 softtabstop=2
-
 " Tabs are evil, make them obvious.
-autocmd FileType python set list listchars=tab:<-
+autocmd FileType python,html,xhtml,css,javascript set list listchars=tab:<-
 
 " Line numbers help a fair bit.
 set number
@@ -97,8 +96,8 @@ let g:nerdtree_tabs_open_on_console_startup=1
 " Use F5 to toggle Gundo
 nnoremap <F5> <ESC>:GundoToggle<CR>
 
-" Remove trailing whitespaces when saving a .py file
-autocmd BufWritePre *.py :%s/\s\+$//e
+" Remove trailing whitespaces when saving a file
+autocmd BufWritePre :%s/\s\+$//e
 
 " Jump to definition
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
