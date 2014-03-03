@@ -99,7 +99,7 @@ let g:nerdtree_tabs_open_on_console_startup=1
 nnoremap <F5> <ESC>:GundoToggle<CR>
 
 " Remove trailing whitespaces when saving a file
-autocmd BufWritePre :%s/\s\+$//e
+autocmd BufWritePre .py :%s/\s\+$//e
 
 " Jump to definition
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
