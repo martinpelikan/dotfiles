@@ -36,6 +36,8 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'bitc/vim-bad-whitespace'
 " Less insane indentations/syntax for JS
 Bundle 'vim-javascript'
+" Fold Python nicely
+Bundle 'tmhedberg/SimpylFold'
 
 " Possibly enable later
 " Bundle 'Lokaltog/vim-easymotion'
@@ -113,3 +115,5 @@ nnoremap <C-F12> <ESC>:Errors<CR>
 " Lint on write is annoying, use F12 instead.
 let g:syntastic_mode_map = {'mode': 'passive'}
 
+" Don't fold functions within classes
+set foldnestmax=2
