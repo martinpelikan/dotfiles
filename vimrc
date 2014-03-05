@@ -37,7 +37,7 @@ Bundle 'bitc/vim-bad-whitespace'
 " Less insane indentations/syntax for JS
 Bundle 'vim-javascript'
 " Fold Python nicely
-Bundle 'tmhedberg/SimpylFold'
+" Bundle 'tmhedberg/SimpylFold'
 
 " Possibly enable later
 " Bundle 'Lokaltog/vim-easymotion'
@@ -99,7 +99,7 @@ let g:nerdtree_tabs_open_on_console_startup=1
 nnoremap <F5> <ESC>:GundoToggle<CR>
 
 " Remove trailing whitespaces when saving a file
-autocmd BufWritePre .py :%s/\s\+$//e
+autocmd BufWritePre *.py :%s/\s\+$//e
 
 " Jump to definition
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -116,4 +116,5 @@ nnoremap <C-F12> <ESC>:Errors<CR>
 let g:syntastic_mode_map = {'mode': 'passive'}
 
 " Don't fold functions within classes
-set foldnestmax=2
+" set foldnestmax=2
+" let g:SimpylFold_docstring_preview = 1
