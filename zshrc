@@ -45,4 +45,3 @@ plugins=(git wd last-working-dir common-aliases)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-source /usr/local/bin/virtualenvwrapper.sh
