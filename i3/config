@@ -116,6 +116,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# suspend host, make sure to add the following to sudoers file: mpelikan ALL=(ALL) NOPASSWD: /home/mpelikan/.i3/suspend, where the script runs a suspend command.
+bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the suspend shortcut. Do you really want to suspend?' -b 'Yes, suspend' 'gnome-screensaver-command -l && sudo /home/mpelikan/.i3/suspend'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -153,3 +155,4 @@ bar {
 # My changes
 exec gnome-settings-daemon
 exec gnome-sound-applet
+exec xautolock -time 1 -locker "gnome-screensaver-command -l"
