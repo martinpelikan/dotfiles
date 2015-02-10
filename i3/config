@@ -160,7 +160,7 @@ bar {
 # Capture all, capture window, capture area
 bindsym Print exec gnome-screenshot
 bindsym $mod+Print exec gnome-screenshot -w
-bindsym $mod+Shift+Print exec gnome-screenshot -a
+bindsym $mod+Shift+Print exec gnome-screenshot --interactive
 
 exec xautolock -time 5 -locker "gnome-screensaver-command -l"
 
