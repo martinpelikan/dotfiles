@@ -78,7 +78,9 @@ status.register("disk",
     path="/home",
     format="home: {used}/{total}G [{avail}G]",)
 
-status.register("cpu_usage_graph")
+status.register("mem")
+status.register("mem_bar")
+
 status.register("cpu_usage")
 status.register("load")
 status.register("temp",
@@ -93,8 +95,6 @@ status.register("temp",
 status.register("temp",
     format="{temp:.0f}°C",
     file="/sys/devices/platform/coretemp.0/temp5_input")
-
-status.register("mem")
-status.register("mem_bar")
+status.register("cpu_usage_graph")
 
 status.run()

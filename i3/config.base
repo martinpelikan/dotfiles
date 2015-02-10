@@ -152,6 +152,8 @@ bar {
     status_command      python3 ~/.i3status.py
     position            bottom
     workspace_buttons   yes
+
+    # $i3-theme-bar
 }
 
 
@@ -178,3 +180,6 @@ exec --no-startup-id gnome-sound-applet
 
 # Start ssh-agent for passwordless ssh
 exec --no-startup-id ssh-add
+
+
+# $i3-theme-window
