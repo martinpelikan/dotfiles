@@ -156,6 +156,12 @@ bar {
 
 
 # My changes
+
+# Capture all, capture window, capture area
+bindsym Print exec gnome-screenshot
+bindsym $mod+Print exec gnome-screenshot -w
+bindsym $mod+Shift+Print exec gnome-screenshot -a
+
 exec xautolock -time 5 -locker "gnome-screensaver-command -l"
 
 # Sensors applet

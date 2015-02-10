@@ -6,32 +6,11 @@ from i3pystatus import Status
 
 status = Status(standalone=True)
 
-# Displays clock like this:
-# Tue 30 Jul 11:59:46 PM KW31
-#                          ^-- calendar week
+status.register("pulseaudio",
+    format="♪{volume}",)
+
 status.register("clock",
     format="%a %-d %b %X KW%V",)
-
-# Shows the average load of the last minute and the last 5 minutes
-# (the default value for format is used)
-status.register("load")
-
-# Shows your CPU temperature, if you have a Intel CPU
-status.register("temp",
-    format="{temp:.0f}°C",
-    file="/sys/devices/platform/coretemp.0/temp2_input")
-
-status.register("temp",
-    format="{temp:.0f}°C",
-    file="/sys/devices/platform/coretemp.0/temp3_input")
-
-status.register("temp",
-    format="{temp:.0f}°C",
-    file="/sys/devices/platform/coretemp.0/temp4_input")
-
-status.register("temp",
-    format="{temp:.0f}°C",
-    file="/sys/devices/platform/coretemp.0/temp5_input")
 
 # The battery monitor has many formatting options, see README for details
 
@@ -99,15 +78,23 @@ status.register("disk",
     path="/home",
     format="home: {used}/{total}G [{avail}G]",)
 
+status.register("cpu_usage_graph")
+status.register("cpu_usage")
+status.register("load")
+status.register("temp",
+    format="{temp:.0f}°C",
+    file="/sys/devices/platform/coretemp.0/temp2_input")
+status.register("temp",
+    format="{temp:.0f}°C",
+    file="/sys/devices/platform/coretemp.0/temp3_input")
+status.register("temp",
+    format="{temp:.0f}°C",
+    file="/sys/devices/platform/coretemp.0/temp4_input")
+status.register("temp",
+    format="{temp:.0f}°C",
+    file="/sys/devices/platform/coretemp.0/temp5_input")
+
 status.register("mem")
 status.register("mem_bar")
-
-status.register("spotify")
-
-# Shows pulseaudio default sink volume
-#
-# Note: requires libpulseaudio from PyPI
-# status.register("pulseaudio",
-#     format="♪{volume}",)
 
 status.run()
