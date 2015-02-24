@@ -181,9 +181,6 @@ exec --no-startup-id psensor
 # Network indicator applet
 exec --no-startup-id nm-applet
 
-# Set monitor standby/suspend/off timeouts in seconds
-exec --no-startup-id xset dpms 1800 0 0
-
 # Simple volume control tray icon (from gnome-control-center package)
 exec --no-startup-id gnome-sound-applet
 
