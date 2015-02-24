@@ -173,7 +173,7 @@ bindsym Print exec gnome-screenshot
 bindsym $mod+Print exec gnome-screenshot -w
 bindsym $mod+Shift+Print exec gnome-screenshot --interactive
 
-exec xautolock -time 5 -locker "gnome-screensaver-command -l"
+#exec xautolock -time 5 -locker "gnome-screensaver-command -l"
 
 # Sensors applet
 exec --no-startup-id psensor
@@ -234,4 +234,3 @@ client.focused          $blue $darkblue $white $blue
 client.focused_inactive $darkgrey $black $grey $darkgrey
 client.unfocused        $black $darkblack $grey $darkgrey
 client.urgent           $lightred $red $white $lightred
-
