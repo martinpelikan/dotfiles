@@ -35,8 +35,8 @@ Plug 'tpope/vim-sensible'
 Plug 'bling/vim-airline'
 " A plugin for asynchronous :make using Neovim's job-control functionality
 Plug 'benekastah/neomake'
-" Runs various installed linters/checkers based on file type
-" Plug 'scrooloose/syntastic'
+" Less annoying paste
+Plug 'ConradIrwin/vim-bracketed-paste'
 call plug#end()
 
 let g:python_host_prog = '/usr/bin/python2'
@@ -88,3 +88,5 @@ set undodir=~/.vim/undo
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 nnoremap <F12> <ESC>:Neomake<CR>
+
+au BufNewFile,BufRead master.cfg setlocal ft=python
