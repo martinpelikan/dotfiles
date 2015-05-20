@@ -1,25 +1,25 @@
 call plug#begin('~/.vim/plugged')
-" fugitive.vim: a Git wrapper so awesome, it should be illegal<F37>
+" fugitive.vim: a Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
 " precision colorscheme for the vim text editor
 Plug 'altercation/vim-colors-solarized'
 " Fuzzy file, buffer, mru, tag, etc finder.
 Plug 'kien/ctrlp.vim'
-" Best auto-completer ever
+" A code-completion engine for Vim
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
-" Nice file explorer
+" A tree explorer plugin for vim.
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-" The above, in a small side panel
+" NERDTree and tabs together in Vim, painlessly
 Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeToggle' }
-" Git aware nerdtree
+" A plugin of NERDTree showing git status
 Plug 'Xuyuanp/nerdtree-git-plugin'
-" sjl/gundo is MIA, use nvim supporting fork:
+" Vim undo tree visualizer
 Plug 'simnalamburt/vim-mundo'
-" Slightly smarter indentations for 'gq'
+" A nicer Python indentation style for vim.
 Plug 'hynek/vim-python-pep8-indent'
-" Add/change surroundings of text blocks
+" surround.vim: quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
-" For a less horrible HTML editing time
+" emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
 Plug 'mattn/emmet-vim'
 " Various convenient shortcuts for cycling/others
 Plug 'tpope/vim-unimpaired'
@@ -37,6 +37,8 @@ Plug 'bling/vim-airline'
 Plug 'benekastah/neomake'
 " Less annoying paste
 Plug 'ConradIrwin/vim-bracketed-paste'
+" vim mode that uses rope library to provide features like python refactorings and code-assists
+Plug 'python-rope/ropevim'
 call plug#end()
 
 let g:python_host_prog = '/usr/bin/python2'
