@@ -39,6 +39,8 @@ Plug 'benekastah/neomake'
 Plug 'ConradIrwin/vim-bracketed-paste'
 " vim mode that uses rope library to provide features like python refactorings and code-assists
 Plug 'python-rope/ropevim'
+" autopep8 plugin for Vim
+Plug 'tell-k/vim-autopep8'
 call plug#end()
 
 let g:python_host_prog = '/usr/bin/python2'
