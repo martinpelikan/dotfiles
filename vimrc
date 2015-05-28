@@ -41,6 +41,8 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'python-rope/ropevim'
 " autopep8 plugin for Vim
 Plug 'tell-k/vim-autopep8'
+" Git status in gutter
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 let g:python_host_prog = '/usr/bin/python2'
@@ -58,8 +60,11 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+" Why not
+set title
+
 " Tabs are evil, make them obvious.
-autocmd FileType python,html,xhtml,css,javascript set list listchars=tab:<-
+autocmd FileType python,html,xhtml,css,javascript set list listchars=tab:→\
 
 " Line numbers help a fair bit.
 set number
@@ -86,6 +91,8 @@ nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Enable persistent undo so that undo history persists across vim sessions
 set undofile
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
 set undodir=~/.vim/undo
 
 " Close vim if the only window left open is a NERDTree?
@@ -94,3 +101,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 nnoremap <F12> <ESC>:Neomake<CR>
 
 au BufNewFile,BufRead master.cfg setlocal ft=python
+
+let g:gitgutter_sign_added = '✚'
+let g:gitgutter_sign_modified = '●'
+let g:gitgutter_sign_removed = '✘'
+let g:gitgutter_sign_modified_removed = '●✘'
