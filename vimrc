@@ -47,7 +47,15 @@ call plug#end()
 
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
+
+" Use the pretty fonts
 let g:airline_powerline_fonts = 1
+let g:gitgutter_sign_added = '✚'
+let g:gitgutter_sign_modified = '●'
+let g:gitgutter_sign_removed = '✘'
+let g:gitgutter_sign_modified_removed = '●✘'
+
+" Open quicklist to see issues
 let g:neomake_open_list = 1
 
 " Initialize Solarized
@@ -60,7 +68,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
-" Why not
+" Why not, slightly more helpful title
 set title
 
 " Tabs are evil, make them obvious.
@@ -89,20 +97,15 @@ nnoremap <F5> <ESC>:GundoToggle<CR>
 " Jump to definition
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-" Enable persistent undo so that undo history persists across vim sessions
+" Enable persistent undo. Move clutter files out of pwd
 set undofile
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 set undodir=~/.vim/undo
 
-" Close vim if the only window left open is a NERDTree?
+" Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 nnoremap <F12> <ESC>:Neomake<CR>
 
 au BufNewFile,BufRead master.cfg setlocal ft=python
-
-let g:gitgutter_sign_added = '✚'
-let g:gitgutter_sign_modified = '●'
-let g:gitgutter_sign_removed = '✘'
-let g:gitgutter_sign_modified_removed = '●✘'
