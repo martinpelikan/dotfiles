@@ -24,7 +24,7 @@ Plug 'mattn/emmet-vim'
 " Various convenient shortcuts for cycling/others
 Plug 'tpope/vim-unimpaired'
 " Redundant whitespaces are redundant
-Plug 'bitc/vim-bad-whitespace'
+Plug 'ntpeters/vim-better-whitespace'
 " Less insane indentations/syntax for JS
 Plug 'vim-javascript'
 " Syntax for MarkDown files.
