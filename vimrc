@@ -72,7 +72,7 @@ set expandtab
 set title
 
 " Tabs are evil, make them obvious.
-autocmd FileType python,html,xhtml,css,javascript set list listchars=tab:→\
+autocmd FileType python,html,xhtml,css,javascript set list listchars=tab:<-
 
 " Line numbers help a fair bit.
 set number
