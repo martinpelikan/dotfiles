@@ -54,6 +54,7 @@ let g:gitgutter_sign_added = '✚'
 let g:gitgutter_sign_modified = '●'
 let g:gitgutter_sign_removed = '✘'
 let g:gitgutter_sign_modified_removed = '●✘'
+let g:airline#extensions#tabline#enabled = 1
 
 " Open quicklist to see issues
 let g:neomake_open_list = 1
