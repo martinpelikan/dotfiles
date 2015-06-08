@@ -7,6 +7,4 @@ source $ZSH/oh-my-zsh.sh
 if [ -e "$HOME/Dotfiles/private_rcs/zsh" ]
 then
     source "$HOME/Dotfiles/private_rcs/zsh"
-else
-    echo "No private zsh file found"
 fi
