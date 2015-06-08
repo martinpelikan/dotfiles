@@ -29,17 +29,6 @@ call plug#end()
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 
-" Use the pretty fonts
-let g:airline_powerline_fonts = 1
-let g:gitgutter_sign_added = '✚'
-let g:gitgutter_sign_modified = '●'
-let g:gitgutter_sign_removed = '✘'
-let g:gitgutter_sign_modified_removed = '●✘'
-let g:airline#extensions#tabline#enabled = 1
-
-" Open quicklist to see issues
-let g:neomake_open_list = 1
-
 " Initialize Solarized
 set background=dark
 colorscheme solarized
@@ -49,35 +38,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-
-" Why not, slightly more helpful title
-set title
-
-" Tabs are evil, make them obvious.
 autocmd FileType python,html,xhtml,css,javascript set list listchars=tab:<-
-
-" Line numbers help a fair bit.
-set number
-
-" Highlight words that are searched.
-set hlsearch
-
-" Be case sensitive only when search expression contains an upper case character
-" When using search and replace, use \C to ensure case sensitivity
-set ignorecase
-set smartcase
-
-" Draw a line at 79 characters for Python.
-autocmd FileType python set colorcolumn=79
-
-" Highlight the current cursor line
-set cursorline
-
-" Use F5 to toggle Gundo
-nnoremap <F5> <ESC>:GundoToggle<CR>
-
-" Jump to definition
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Enable persistent undo. Move clutter files out of pwd
 set undofile
@@ -85,9 +46,45 @@ set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 set undodir=~/.vim/undo
 
+" Be case sensitive only when search expression contains an upper case character
+" When using search and replace, use \C to ensure case sensitivity
+set ignorecase
+set smartcase
+
+" Misc. useful settings
+set title
+set number
+set hlsearch
+set cursorline
+
+" You shall not pass! ... this v-line if you are pep8 compliant
+autocmd FileType python set colorcolumn=80
+
 " Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-nnoremap <F12> <ESC>:Neomake<CR>
-
+" Buildbot config actually uses Python
 au BufNewFile,BufRead master.cfg setlocal ft=python
+
+" Use the pretty fonts
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:gitgutter_sign_added = '✚'
+let g:gitgutter_sign_modified = '●'
+let g:gitgutter_sign_removed = '✘'
+let g:gitgutter_sign_modified_removed = '●✘'
+
+" Easymotion minimal vimrc
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+let g:EasyMotion_smartcase = 1
+
+" Open quicklist to see issues
+let g:neomake_open_list = 1
+
+" Maps
+nmap s <Plug>(easymotion-s2)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+nnoremap <F5> <ESC>:GundoToggle<CR>
+nnoremap <F12> <ESC>:Neomake<CR>
+nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
