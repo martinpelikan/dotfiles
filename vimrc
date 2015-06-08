@@ -1,48 +1,29 @@
 call plug#begin('~/.vim/plugged')
-" fugitive.vim: a Git wrapper so awesome, it should be illegal
-Plug 'tpope/vim-fugitive'
-" precision colorscheme for the vim text editor
-Plug 'altercation/vim-colors-solarized'
-" Fuzzy file, buffer, mru, tag, etc finder.
-Plug 'kien/ctrlp.vim'
-" A code-completion engine for Vim
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
-" A tree explorer plugin for vim.
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-" NERDTree and tabs together in Vim, painlessly
-Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeToggle' }
-" A plugin of NERDTree showing git status
-Plug 'Xuyuanp/nerdtree-git-plugin'
-" Vim undo tree visualizer
-Plug 'simnalamburt/vim-mundo'
-" A nicer Python indentation style for vim.
-Plug 'hynek/vim-python-pep8-indent'
-" surround.vim: quoting/parenthesizing made simple
-Plug 'tpope/vim-surround'
-" emmet-vim is a vim plug-in which provides support for expanding abbreviations similar to emmet.
-Plug 'mattn/emmet-vim'
-" Various convenient shortcuts for cycling/others
-Plug 'tpope/vim-unimpaired'
-" Redundant whitespaces are redundant
-Plug 'ntpeters/vim-better-whitespace'
-" Less insane indentations/syntax for JS
-Plug 'vim-javascript'
-" Syntax for MarkDown files.
-Plug 'plasticboy/vim-markdown'
-" Sensible defaults
-Plug 'tpope/vim-sensible'
-" Powerline usage in statusline
-Plug 'bling/vim-airline'
-" A plugin for asynchronous :make using Neovim's job-control functionality
-Plug 'benekastah/neomake'
-" Less annoying paste
-Plug 'ConradIrwin/vim-bracketed-paste'
-" vim mode that uses rope library to provide features like python refactorings and code-assists
-Plug 'python-rope/ropevim'
-" autopep8 plugin for Vim
-Plug 'tell-k/vim-autopep8'
-" Git status in gutter
 Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
+Plug 'benekastah/neomake'
+Plug 'bling/vim-airline'
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeToggle' }
+Plug 'kien/ctrlp.vim'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'mattn/emmet-vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'plasticboy/vim-markdown'
+Plug 'python-rope/ropevim'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'simnalamburt/vim-mundo'
+Plug 'tell-k/vim-autopep8'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'vim-javascript'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 let g:python_host_prog = '/usr/bin/python2'
