@@ -68,8 +68,9 @@ autocmd FileType python set colorcolumn=80
 " Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" Buildbot config actually uses Python
+" Be honest about their filetypes.
 au BufNewFile,BufRead master.cfg setlocal ft=python
+au BufNewFile,BufRead README setlocal ft=rst
 
 " Use the pretty fonts
 let g:airline#extensions#tabline#enabled = 1
