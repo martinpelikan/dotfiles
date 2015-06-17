@@ -99,3 +99,27 @@ nnoremap <Leader>b :TagbarToggle<CR>
 
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax = 1
+autocmd FileType python let b:easytags_auto_highlight = 0
+
+" VIntSearch
+function! s:nnoreicmap(option, shortcut, command)
+    execute 'nnoremap '.a:option.' '.a:shortcut.' '.a:command
+    execute 'imap '.a:option.' '.a:shortcut.' <Esc>'.a:shortcut
+    execute 'cmap '.a:option.' '.a:shortcut.' <Esc>'.a:shortcut
+endfunction
+
+call s:nnoreicmap('','<A-t>',':VIntSearchMoveBackward<CR>')
+call s:nnoreicmap('','<A-T>',':VIntSearchMoveForward<CR>')
+
+call s:nnoreicmap('','<A-]>',':VIntSearchCtagsCursor n j<CR>')
+call s:nnoreicmap('','g]',':VIntSearchCtagsCursor n l<CR>')
+call s:nnoreicmap('','g\',':VIntSearchGrepCursor n l<CR><CR>')
+vnoremap <A-]> :<C-u>VIntSearchCtagsCursor v j<CR>
+vnoremap g] :<C-u>VIntSearchCtagsCursor v l<CR>
+vnoremap g\ :<C-u>VIntSearchGrepCursor v l<CR><CR>
+
+call s:nnoreicmap('','g\|',':VIntSearchCFGrepCursor n l<CR><CR>')
+vnoremap g\| :<C-u>VIntSearchCFGrepCursor v l<CR><CR>
+
+call s:nnoreicmap('','<F8>',':VScnext<CR>')
+call s:nnoreicmap('','<S-F8>',':VScprev<CR>')
