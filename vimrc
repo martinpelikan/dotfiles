@@ -4,15 +4,17 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'benekastah/neomake'
 Plug 'bling/vim-airline'
 Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'godlygeek/tabular'
 Plug 'hynek/vim-python-pep8-indent'
+Plug 'JCLiang/vim-cscope-utils'
 Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeToggle' }
 Plug 'kien/ctrlp.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'
-Plug 'mattn/emmet-vim'
-Plug 'ntpeters/vim-better-whitespace'
+Plug 'mattn/emmet-vim', { 'for': ['html', 'xhtml'] }  " not only does it load for every file, it also has default keybindings
+Plug 'ntpeters/vim-better-whitespace', { 'for': ['python', 'html', 'xhtml']}  " some battles are not worth fighting
 Plug 'plasticboy/vim-markdown'
-Plug 'python-rope/ropevim'
+Plug 'python-rope/ropevim', { 'on': ':RopeOpenProject' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'simnalamburt/vim-mundo'
 Plug 'tell-k/vim-autopep8'
@@ -23,7 +25,6 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
-Plug 'vim-javascript'
 Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -37,40 +38,40 @@ let g:python3_host_prog = '/usr/bin/python3'
 set background=dark
 colorscheme solarized
 
-" Spacing and indenting settings
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-autocmd FileType python,html,xhtml,css,javascript set list listchars=tab:<-
-
 " Enable persistent undo. Move clutter files out of pwd
 set undofile
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 set undodir=~/.vim/undo
 
-" Be case sensitive only when search expression contains an upper case character
-" When using search and replace, use \C to ensure case sensitivity
+" Use \C or PartialCaps to ensure case sensitive searches
 set ignorecase
 set smartcase
 
 " Misc. useful settings
-set title
-set number
-set hlsearch
 set cursorline
+set hlsearch
+set number
 set spell
+set title
 
+" Spacing and indenting settings
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+autocmd FileType python,html,xhtml,css,javascript set list listchars=tab:<-
 " You shall not pass! ... this v-line if you are pep8 compliant
 autocmd FileType python set colorcolumn=80
 
-" Close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" easytags is nice but highlighting is distracting
+autocmd FileType python let b:easytags_auto_highlight = 0
+" Remember the last cursor position
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endi
 
 " Be honest about their filetypes.
-au BufNewFile,BufRead master.cfg setlocal ft=python
-au BufNewFile,BufRead README setlocal ft=rst
+autocmd BufNewFile,BufRead master.cfg setlocal ft=python
+autocmd BufNewFile,BufRead README setlocal ft=rst
 
 " Use the pretty fonts
 let g:airline#extensions#tabline#enabled = 1
@@ -80,46 +81,27 @@ let g:gitgutter_sign_modified = '●'
 let g:gitgutter_sign_removed = '✘'
 let g:gitgutter_sign_modified_removed = '●✘'
 
-" Easymotion minimal vimrc
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
+let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 
 " Open quicklist to see issues
 let g:neomake_open_list = 1
 
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+" Does this even do anything?
+let g:ropevim_enable_shortcuts = 0
+" Async easytag creation
+let g:easytags_async = 1
+
 " Maps
-nmap s <Plug>(easymotion-s2)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+nnoremap s <Plug>(easymotion-s2)
+nnoremap <Leader>j <Plug>(easymotion-j)
+nnoremap <Leader>k <Plug>(easymotion-k)
 nnoremap <F5> <ESC>:GundoToggle<CR>
 nnoremap <F12> <ESC>:Neomake<CR>
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 nnoremap <leader>. :CtrlPTag<CR>
 nnoremap <Leader>b :TagbarToggle<CR>
-
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-autocmd FileType python let b:easytags_auto_highlight = 0
-
-" VIntSearch
-function! s:nnoreicmap(option, shortcut, command)
-    execute 'nnoremap '.a:option.' '.a:shortcut.' '.a:command
-    execute 'imap '.a:option.' '.a:shortcut.' <Esc>'.a:shortcut
-    execute 'cmap '.a:option.' '.a:shortcut.' <Esc>'.a:shortcut
-endfunction
-
-call s:nnoreicmap('','<A-t>',':VIntSearchMoveBackward<CR>')
-call s:nnoreicmap('','<A-T>',':VIntSearchMoveForward<CR>')
-
-call s:nnoreicmap('','<A-]>',':VIntSearchCtagsCursor n j<CR>')
-call s:nnoreicmap('','g]',':VIntSearchCtagsCursor n l<CR>')
-call s:nnoreicmap('','g\',':VIntSearchGrepCursor n l<CR><CR>')
-vnoremap <A-]> :<C-u>VIntSearchCtagsCursor v j<CR>
-vnoremap g] :<C-u>VIntSearchCtagsCursor v l<CR>
-vnoremap g\ :<C-u>VIntSearchGrepCursor v l<CR><CR>
-
-call s:nnoreicmap('','g\|',':VIntSearchCFGrepCursor n l<CR><CR>')
-vnoremap g\| :<C-u>VIntSearchCFGrepCursor v l<CR><CR>
-
-call s:nnoreicmap('','<F8>',':VScnext<CR>')
-call s:nnoreicmap('','<S-F8>',':VScprev<CR>')
+" Until ex mode is removed forever.
+nnoremap Q :qa<CR>
