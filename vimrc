@@ -78,6 +78,8 @@ let g:ycm_seed_identifiers_with_syntax = 1
 " Only set motions I'll remember
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
+" CtrlP all the things
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 " =========================  Key Mappings  ========================= 
 " EasyMotion substitute, up, down
