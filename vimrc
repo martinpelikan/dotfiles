@@ -4,17 +4,17 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'benekastah/neomake'
 Plug 'bling/vim-airline'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'godlygeek/tabular'
+Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'JCLiang/vim-cscope-utils'
 Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeToggle' }
 Plug 'kien/ctrlp.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'
-Plug 'mattn/emmet-vim', { 'for': ['html', 'xhtml'] }  " not only does it load for every file, it also has default keybindings
 Plug 'ntpeters/vim-better-whitespace', { 'for': ['python', 'html', 'xhtml']}  " some battles are not worth fighting
 Plug 'plasticboy/vim-markdown'
 Plug 'python-rope/ropevim', { 'on': ':RopeOpenProject' }
+Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'simnalamburt/vim-mundo'
 Plug 'tell-k/vim-autopep8'
@@ -80,6 +80,8 @@ let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 " CtrlP all the things
 let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden --ignore .git --ignore "**/*.pyc" -g ""'
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " =========================  Key Mappings  ========================= 
 " EasyMotion substitute, up, down
