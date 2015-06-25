@@ -13,7 +13,7 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'
 Plug 'ntpeters/vim-better-whitespace', { 'for': ['python', 'html', 'xhtml']}  " some battles are not worth fighting
 Plug 'plasticboy/vim-markdown'
-Plug 'python-rope/ropevim', { 'on': ':RopeOpenProject' }
+Plug 'python-rope/ropevim', { 'on': 'RopeOpenProject' }
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'simnalamburt/vim-mundo'
@@ -58,7 +58,7 @@ set expandtab
 " Fancy ctag / cscope stuff
 set cscopetag
 set csto=0
-" CtrlP should not match pyc files, or other clutter for that matter
+" Should not match pyc files, or other clutter for that matter
 set wildignore+=*.pyc,*.bak,*/tmp/*,*.so,*.swp,*.zip
 
 " =========================  Plugin Variables  ========================= 
@@ -78,9 +78,7 @@ let g:ycm_seed_identifiers_with_syntax = 1
 " Only set motions I'll remember
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
-" CtrlP all the things
-let g:ctrlp_cmd = 'CtrlPMixed'
-let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden --ignore .git --ignore "**/*.pyc" -g ""'
+" Quicker matcher
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " =========================  Key Mappings  ========================= 
@@ -91,19 +89,18 @@ nnoremap <Leader>k <Plug>(easymotion-k)
 " When ctags fail ... 
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 " CtrlP for tagfiles
-nnoremap <leader>. :CtrlPTag<CR>
+nnoremap <M-]> :CtrlPTag<CR>
 " We basically have an IDE now
 nnoremap <Leader>b :TagbarToggle<CR>
-" VIntSearch command-mode Mappings
-nnoremap <M-]> :VIntSearchCtagsCursor n j<CR>
+" VIntSearch
 nnoremap <M-t> :VIntSearchMoveBackward<CR>
 nnoremap <M-T> :VIntSearchMoveForward<CR>
+nnoremap <M-p> :silent! VScprev<CR>
+nnoremap <M-n> :silent! VScnext<CR>
 nnoremap g\ :VIntSearchGrepCursor n l<CR><CR>
-nnoremap g] :VIntSearchCtagsCursor n l<CR>
-" VIntSearch visual-mode Mappings
-vnoremap <M-]> :<C-u>VIntSearchCtagsCursor v j<CR>
 vnoremap g\ :<C-u>VIntSearchGrepCursor v l<CR><CR>
-vnoremap g] :<C-u>VIntSearchCtagsCursor v l<CR>
+" Silver searcher
+nnoremap <M-f> :Ag<CR>
 " Cscope shortcuts
 nnoremap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>  
 nnoremap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>  
@@ -114,9 +111,6 @@ nnoremap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nnoremap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nnoremap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>  
 " F-key bindings
-nnoremap <F5> :GundoToggle<CR>
-nnoremap <F9> :VScnext<CR>
-nnoremap <F10> :VScprev<CR>
 nnoremap <F12> :Neomake<CR>
 " Until ex mode dies in a fire: https://github.com/neovim/neovim/issues/1089
 nnoremap Q :qa<CR>
