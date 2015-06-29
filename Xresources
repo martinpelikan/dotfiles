@@ -47,6 +47,7 @@ URxvt.font: xft:Ubuntu\ Mono\ derivative\ Powerline:pixelsize=16
 ! Reduce font spaces by 1 pixel - avoid gaps in powerline symbols
 URxvt.letterSpace: -1
 URxvt.cursorBlink: true
+URxvt.scrollBar: false
 
 ! https://bbs.archlinux.org/viewtopic.php?pid=1236040#p1236040
 ! Xft.autohint: 0
