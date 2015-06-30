@@ -12,6 +12,10 @@ Xft.hinting: 1
 Xft.hintstyle: hintslight
 Xft.rgba: rgb
 
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: sensible-browser
+URxvt.matcher.button: 1
+
 ! https://bbs.archlinux.org/viewtopic.php?pid=1236040#p1236040
 ! Xft.autohint: 0
 ! Xft.lcdfilter: lcddefault
