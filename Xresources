@@ -49,11 +49,12 @@ URxvt.letterSpace: -1
 URxvt.cursorBlink: true
 URxvt.scrollBar: false
 
+Xft.antialias: 1
+Xft.dpi: 96
+Xft.hinting: 1
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+
 ! https://bbs.archlinux.org/viewtopic.php?pid=1236040#p1236040
 ! Xft.autohint: 0
-! Xft.antialias: 1
-! Xft.hinting: 1 
-! Xft.hintstyle: hintslight
-! Xft.dpi: 96
-! Xft.rgba: rgb
 ! Xft.lcdfilter: lcddefault

@@ -123,5 +123,5 @@ autocmd FileType python set colorcolumn=80
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endi
 
 " =========================  Special File Syntax  ========================= 
-autocmd BufNewFile,BufRead master.cfg setlocal ft=python
+autocmd BufNewFile,BufRead *.tac,master.cfg setlocal ft=python
 autocmd BufNewFile,BufRead README setlocal ft=rst
