@@ -55,6 +55,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+" The mouse does more harm than good
+set mouse=
 " Fancy ctag / cscope stuff
 set cscopetag
 set csto=0
