@@ -1,21 +1,23 @@
 #include ".Xresources.dark"
 
-URxvt.font: xft:Ubuntu\ Mono\ derivative\ Powerline:pixelsize=16
+URxvt.font: xft:Ubuntu Mono derivative Powerline:pixelsize=16
 ! Reduce font spaces by 1 pixel - avoid gaps in powerline symbols
 URxvt.letterSpace: -1
 URxvt.cursorBlink: true
 URxvt.scrollBar: false
 
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
+
 Xft.antialias: 1
-Xft.dpi: 96
+! Xft.dpi: 96
 Xft.hinting: 1
 Xft.hintstyle: hintslight
 Xft.rgba: rgb
-
-URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: sensible-browser
-URxvt.matcher.button: 1
-
-! https://bbs.archlinux.org/viewtopic.php?pid=1236040#p1236040
-! Xft.autohint: 0
-! Xft.lcdfilter: lcddefault
