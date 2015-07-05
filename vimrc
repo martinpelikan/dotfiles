@@ -49,7 +49,6 @@ set smartcase
 set cursorline
 set hlsearch
 set number
-set spell
 set title
 " Spacing and indenting settings
 set tabstop=4
