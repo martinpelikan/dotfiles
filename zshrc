@@ -1,4 +1,4 @@
-HISTFILE=~/.histfile
+HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=100000
 ZSH=$HOME/.oh-my-zsh
