@@ -124,8 +124,8 @@ nnoremap Q :qa<CR>
 autocmd FileType python,html,xhtml,css,javascript set list listchars=tab:<-
 " You shall not pass! ... this v-line if you are pep8 compliant
 autocmd FileType python set colorcolumn=80
-" Remember the last cursor position
-autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endi
+" Remember the last cursor position, but not for gitcommit files
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" | exe "normal! g'\"" | endif
 
 " =========================  Special File Syntax  ========================= 
 autocmd BufNewFile,BufRead *.tac,master.cfg setlocal ft=python
