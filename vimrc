@@ -42,6 +42,8 @@ set undofile
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 set undodir=~/.vim/undo
+" default of 4000ms is a bit too slow for gitgutter
+set updatetime=750
 " Use \C or PartialCaps to ensure case sensitive searches
 set ignorecase
 set smartcase
@@ -72,6 +74,7 @@ let g:gitgutter_sign_added = '✚'
 let g:gitgutter_sign_modified = '●'
 let g:gitgutter_sign_removed = '✘'
 let g:gitgutter_sign_modified_removed = '●✘'
+let g:gitgutter_sign_removed_first_line = 'g✘'
 " Open quicklist on F12 for lint issues
 let g:neomake_open_list = 1
 " Supplement YCM's completion options with tags/syntax
