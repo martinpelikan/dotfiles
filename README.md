@@ -10,6 +10,5 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 ```VimL
 :PlugInstall
-:GoInstallBinaries
 ```
 
