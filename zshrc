@@ -2,10 +2,10 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=100000
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="powerlevel9k/powerlevel9k"
 COMPLETION_WAITING_DOTS="true"
 plugins=(git wd last-working-dir common-aliases archlinux)
-# Would be nice, but seems to break on tab completion.
+
+ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 setopt appendhistory autocd extendedglob nomatch notify

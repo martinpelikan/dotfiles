@@ -85,6 +85,8 @@ let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 " Quicker matcher
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+" Folding is terrible even for markdown files
+let g:vim_markdown_folding_disabled=1
 
 " =========================  Key Mappings  ========================= 
 " EasyMotion substitute, up, down
