@@ -1,2 +1,1 @@
-alias vim='nvim'
-alias sudo='sudo '
+alias -g vim='nvim'
