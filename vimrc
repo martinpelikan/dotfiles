@@ -72,9 +72,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:gitgutter_sign_added = '✚'
 let g:gitgutter_sign_modified = '●'
-let g:gitgutter_sign_removed = '✘'
+let g:gitgutter_sign_removed = '✘_'
 let g:gitgutter_sign_modified_removed = '●✘'
-let g:gitgutter_sign_removed_first_line = 'g✘'
+let g:gitgutter_sign_removed_first_line = '✘‾'
 " Open quicklist on F12 for lint issues
 let g:neomake_open_list = 1
 " Supplement YCM's completion options with tags/syntax
