@@ -11,3 +11,5 @@ esac
 # Why is this not a default on every system ever?
 export EDITOR=nvim
 export VISUAL=nvim
+# This is a lie, but needed to make some apps happy...
+export TERM='xterm-256color'
