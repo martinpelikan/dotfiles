@@ -19,7 +19,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'python-rope/ropevim', { 'on': 'RopeOpenProject' }
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'sheerun/vim-polyglot'
 Plug 'simnalamburt/vim-mundo'
 Plug 'tell-k/vim-autopep8'
 Plug 'tpope/vim-commentary'

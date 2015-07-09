@@ -1,12 +1,19 @@
 # Bit of a hack to deal with machine-specific variables
 case $HOST in
-  (arch)
-      # Used by agnoster/powerlevel9k to minify prompt length
-      DEFAULT_USER='mpelikan'
-      # systemd starts ssh-agent at home
-      export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket";;
-  (*)
-      DEFAULT_USER='martin';;
+    (arch)
+        # systemd starts ssh-agent at home
+        export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+        # Some things are different on other machines
+        if [ -n "$SSH_CLIENT" ]
+        then
+            # Used by agnoster/powerlevel9k to minify prompt length
+            export DEFAULT_USER="mpelikan"
+        fi;;
+    (*)
+        if [ -n "$SSH_CLIENT" ]
+        then
+            export DEFAULT_USER="martin"
+        fi;;
 esac
 # Why is this not a default on every system ever?
 export EDITOR=nvim

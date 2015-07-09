@@ -1,4 +1,7 @@
-alias -g vim='nvim'
+if [ -z "$SSH_CLIENT" ]
+then
+    alias -g vim='nvim'
+fi
 
 alias -s cfg=vim
 alias -s md=vim
