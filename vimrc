@@ -97,47 +97,49 @@ let g:vim_markdown_folding_disabled=1
 " Make all sorts case insensitive and remove duplicates
 let g:sort_motion_flags = "ui"
 
-" =========================  Key Mappings  =========================
+" =========================  Normal Mode Mappings  =========================
 " EasyMotion substitute, up, down
-nnoremap s <Plug>(easymotion-s2)
-nnoremap <Leader>j <Plug>(easymotion-j)
-nnoremap <Leader>k <Plug>(easymotion-k)
+nn s <Plug>(easymotion-s2)
+nn <Leader>j <Plug>(easymotion-j)
+nn <Leader>k <Plug>(easymotion-k)
 " When ctags fail ...
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nn <leader>jd :YcmCompleter GoTo<CR>
 " CtrlP for tagfiles
-nnoremap <M-]> :CtrlPTag<CR>
+nn <M-]> :CtrlPTag<CR>
 " We basically have an IDE now
-nnoremap <Leader>b :TagbarToggle<CR>
+nn <Leader>b :TagbarToggle<CR>
 " VIntSearch
-nnoremap <M-t> :VIntSearchMoveBackward<CR>
-nnoremap <M-T> :VIntSearchMoveForward<CR>
-nnoremap <M-p> :silent! VScprev<CR>
-nnoremap <M-n> :silent! VScnext<CR>
-nnoremap g\ :VIntSearchGrepCursor n l<CR><CR>
-vnoremap g\ :<C-u>VIntSearchGrepCursor v l<CR><CR>
+nn <M-t> :VIntSearchMoveBackward<CR>
+nn <M-T> :VIntSearchMoveForward<CR>
+nn <M-p> :silent! VScprev<CR>
+nn <M-n> :silent! VScnext<CR>
+nn g\ :VIntSearchGrepCursor n l<CR><CR>
 " Silver searcher
-nnoremap <M-f> :Ag<CR>
+nn <M-f> :Ag<CR>
 " Cscope shortcuts
-nnoremap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nnoremap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nnoremap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+nn <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nn <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nn <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nn <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nn <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nn <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nn <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nn <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 " F-key bindings
-nnoremap <F12> :Neomake<CR>
+nn <F12> :Neomake<CR>
 " Until ex mode dies in a fire: https://github.com/neovim/neovim/issues/1089
-nnoremap Q :qa<CR>
+nn Q :qa<CR>
+
+" =========================  Visual Mode Mappings  =========================
+vn g\ :<C-u>VIntSearchGrepCursor v l<CR><CR>
 
 " =========================  FileType Behaviours  =========================
-autocmd FileType python,html,xhtml,css,javascript set list listchars=tab:<-
+au FileType python,html,xhtml,css,javascript set list listchars=tab:<-
 " You shall not pass! ... this v-line if you are pep8 compliant
-autocmd FileType python set colorcolumn=80
+au FileType python set colorcolumn=80
 " Remember the last cursor position, but not for gitcommit files
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" | exe "normal! g'\"" | endif
 
 " =========================  Special File Syntax  =========================
-autocmd BufNewFile,BufRead *.tac,master.cfg setlocal ft=python
-autocmd BufNewFile,BufRead README setlocal ft=rst
+au BufNewFile,BufRead *.tac,master.cfg setlocal ft=python
+au BufNewFile,BufRead README setlocal ft=rst
