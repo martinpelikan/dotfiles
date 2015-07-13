@@ -12,6 +12,7 @@ Plug 'henrik/vim-indexed-search'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'JCLiang/vim-cscope-utils', { 'for': ['python', 'c', 'cpp']}
 Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeToggle' }
+Plug 'kana/vim-textobj-user'
 Plug 'kien/ctrlp.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'
@@ -68,7 +69,7 @@ set expandtab
 set mouse=
 " Fancy ctag / cscope stuff
 set cscopetag
-set csto=0
+set csto=1
 " Should not match pyc files, or other clutter for that matter
 set wildignore+=*.pyc,*.bak,*/tmp/*,*.so,*.swp,*.zip
 
@@ -96,6 +97,8 @@ let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 let g:vim_markdown_folding_disabled=1
 " Make all sorts case insensitive and remove duplicates
 let g:sort_motion_flags = "ui"
+" Do project-wide searches with ag.vim
+let g:ag_working_path_mode="r"
 
 " =========================  Normal Mode Mappings  =========================
 " EasyMotion substitute, up, down
