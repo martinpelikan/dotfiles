@@ -1,6 +1,9 @@
 #include ".Xresources.dark"
 
-URxvt.font: xft:Ubuntu Mono derivative Powerline:pixelsize=16
+URxvt.font: xft:Ubuntu Mono derivative Powerline:pixelsize=16,\
+            xft:Inconsolata for Powerline
+URxvt.boldfont: xft:Ubuntu Mono derivative Powerline:bold:pixelsize=16,\
+                xft:Inconsolata for Powerline:bold
 ! Reduce font spaces by 1 pixel - avoid gaps in powerline symbols
 URxvt.letterSpace: -1
 URxvt.cursorBlink: true
