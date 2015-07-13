@@ -20,3 +20,4 @@ export EDITOR=nvim
 export VISUAL=nvim
 # This is a lie, but needed to make some apps happy...
 export TERM='xterm-256color'
+export PATH=$PATH:$HOME/bin
