@@ -8,6 +8,7 @@ URxvt.boldfont: xft:Ubuntu Mono derivative Powerline:bold:pixelsize=16,\
 URxvt.letterSpace: -1
 URxvt.cursorBlink: true
 URxvt.scrollBar: false
+URxvt*saveLines: 12000
 
 URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
