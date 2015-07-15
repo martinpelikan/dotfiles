@@ -9,7 +9,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=100000
 
-setopt autocd correct correctall extendedglob histignorealldups nomatch notify sharehistory
+setopt autocd correct extendedglob histignorealldups nomatch notify sharehistory
 zstyle :compinstall filename '$HOME/.zshrc'
 
 autoload -Uz compinit
