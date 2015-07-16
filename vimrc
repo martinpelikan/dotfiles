@@ -85,7 +85,7 @@ let g:gitgutter_sign_modified_removed = '●✘'
 let g:gitgutter_sign_removed = '✘_'
 let g:gitgutter_sign_removed_first_line = '✘‾'
 " Open quicklist on F12 for lint issues
-let g:neomake_open_list = 1
+let g:neomake_open_list = 2
 " Supplement YCM's completion options with tags/syntax
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax = 1
