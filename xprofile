@@ -1,6 +1,8 @@
 xset r rate 200 40
 xset dpms 1200 0 0
 xset m 5/3 0
+# Nobody needs a caps lock anyway.
+setxkbmap -option ctrl:nocaps
 # Need to load this before i3, since it uses this with sensible-terminal
 export TERMINAL=urxvt
 [[ -f ~/.Xresources ]] && xrdb -I$HOME -merge ~/.Xresources
