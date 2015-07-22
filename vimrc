@@ -72,7 +72,7 @@ set cscopetag
 set csto=1
 " Should not match pyc files, or other clutter for that matter
 set wildignore+=*.pyc,*.bak,*/tmp/*,*.so,*.swp,*.zip
-set tags=.git/**/tags
+set tags+=.git/**/tags;$HOME
 
 " =========================  Plugin Variables  =========================
 " Buffers > Tabs, once you can see them
