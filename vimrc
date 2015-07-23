@@ -10,7 +10,7 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'henrik/vim-indexed-search'
 Plug 'hynek/vim-python-pep8-indent'
-Plug 'JCLiang/vim-cscope-utils', { 'for': ['python', 'c', 'cpp']}
+Plug 'JCLiang/vim-cscope-utils'
 Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeToggle' }
 Plug 'kana/vim-textobj-user'
 Plug 'kien/ctrlp.vim'
@@ -72,7 +72,6 @@ set cscopetag
 set csto=1
 " Should not match pyc files, or other clutter for that matter
 set wildignore+=*.pyc,*.bak,*/tmp/*,*.so,*.swp,*.zip
-set tags+=.git/**/tags;$HOME
 
 " =========================  Plugin Variables  =========================
 " Buffers > Tabs, once you can see them
