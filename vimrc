@@ -99,6 +99,7 @@ let g:vim_markdown_folding_disabled=1
 let g:sort_motion_flags = "ui"
 " Do project-wide searches with ag.vim
 let g:ag_working_path_mode="r"
+let g:cscope_utils_ctags_extra_args=["--fields=+l"]
 
 " =========================  Normal Mode Mappings  =========================
 " EasyMotion substitute, up, down
