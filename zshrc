@@ -16,14 +16,16 @@ autoload -Uz compinit
 compinit
 
 # Put any machine-specific or sensitive info here
-if [ -e "$HOME/Dotfiles/private_rcs/zsh" ]
+if [ -e "$HOME/Dotfiles/private/zshrc" ]
 then
-    source "$HOME/Dotfiles/private_rcs/zsh"
+    source "$HOME/Dotfiles/private/zshrc"
 fi
-# Collect all the aliases in a single location
+
+# Source all the command/filetype aliases
 if [ -e "$HOME/.aliases.sh" ]
 then
     source "$HOME/.aliases.sh"
 fi
+
 # Get proper colors for all file types
 eval `dircolors $HOME/.dircolors`

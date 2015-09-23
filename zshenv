@@ -1,23 +1,30 @@
 # Bit of a hack to deal with machine-specific variables
 case $HOST in
     (arch)
-        # systemd starts ssh-agent at home
+        # systemd starts ssh-agent in home setup
         export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-        # Some things are different on other machines
-        if [ -z "$SSH_CLIENT" ]
-        then
-            # Used by agnoster/powerlevel9k to minify prompt length
-            export DEFAULT_USER="mpelikan"
-        fi;;
+        ;;
     (*)
-        if [ -z "$SSH_CLIENT" ]
-        then
-            export DEFAULT_USER="martin"
-        fi;;
+        : ;;
 esac
+
+# Used by agnoster/powerlevel9k to minify prompt length
+# zshenv only loaded at startup, so let the user at that point define the default user
+if [ -z "$SSH_CLIENT" ]
+then
+    export DEFAULT_USER=$USER
+fi
+
 # Why is this not a default on every system ever?
-export EDITOR=nvim
-export VISUAL=nvim
+if hash nvim 2>/dev/null; then
+    export EDITOR=nvim
+    export VISUAL=nvim
+elif hash vim 2>/dev/null; then
+    export EDITOR=vim
+    export VISUAL=vim
+fi
+
+# Custom binaries go in ~/bin
+export PATH=$PATH:$HOME/bin
 # This is a lie, but needed to make some apps happy...
 export TERM='xterm-256color'
-export PATH=$PATH:$HOME/bin

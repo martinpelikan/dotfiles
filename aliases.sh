@@ -1,6 +1,10 @@
 if [ -z "$SSH_CLIENT" ]
 then
-    alias -g vim='nvim'
+    if hash nvim 2>/dev/null; then
+        alias -g vim='nvim'
+    else
+        echo "neovim missing? can't alias vim=nvim"
+    fi
 fi
 
 alias -s jpg=chromium
