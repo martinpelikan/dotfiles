@@ -23,23 +23,11 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+semicolon split h
@@ -91,7 +79,7 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# scratchpad 
+# scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
@@ -139,25 +127,18 @@ bar {
     # $i3-theme-bar
 }
 
-# Capture all, capture window, capture area
+# Capture all, capture window, capture area. # TODO work with scrot
 bindsym Print exec gnome-screenshot
 bindsym $mod+Print exec gnome-screenshot -w
 bindsym $mod+Shift+Print exec gnome-screenshot --interactive
 
+# Lock screen
 bindsym $mod+Shift+p exec i3lock -c 000000
 
+# Volume controls. TODO: Work with/without special key and pulse
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
 bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
-
-# exec xautolock -time 5 -locker "gnome-screensaver-command -l"
-
-# Sensors applet
-exec --no-startup-id psensor
-# Network indicator applet
-exec --no-startup-id nm-applet
-# Simple volume control tray icon (from gnome-control-center package)
-exec --no-startup-id gnome-sound-applet
 
 # j4-make-config starts here
 # $i3-theme-window
