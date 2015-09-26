@@ -138,12 +138,20 @@ nn Q :qa<CR>
 vn g\ :<C-u>VIntSearchGrepCursor v l<CR><CR>
 
 " =========================  FileType Behaviours  =========================
-au FileType python,html,xhtml,css,javascript set list listchars=tab:<-
-" You shall not pass! ... this v-line if you are pep8 compliant
-au FileType python set colorcolumn=80
-" Remember the last cursor position, but not for gitcommit files
-au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" | exe "normal! g'\"" | endif
+aug show_tabs
+    au FileType python,html,xhtml,css,javascript set list listchars=tab:<-
+aug END
 
-" =========================  Special File Syntax  =========================
-au BufNewFile,BufRead *.tac,master.cfg setlocal ft=python
-au BufNewFile,BufRead README setlocal ft=rst
+aug colour_column
+    au FileType python set colorcolumn=80  " pep8
+aug END
+
+" Remember the last cursor position, but not for gitcommit files
+aug cursor_memory
+    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" | exe "normal! g'\"" | endif
+aug END
+
+aug special_types
+    au BufNewFile,BufRead *.tac,master.cfg setlocal ft=python  " buildbot
+    au BufNewFile,BufRead README setlocal ft=rst
+aug END
