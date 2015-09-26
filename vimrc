@@ -37,40 +37,38 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'yssl/VIntSearch'
 call plug#end()
 
-let g:python_host_prog = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python3'
-
 " =========================  Built-in Variables  =========================
-" Initialize Solarized
-set background=dark
+let g:python_host_prog='/usr/bin/python2'
+let g:python3_host_prog='/usr/bin/python3'
+
+" Solarized is easy on the eyes
 colorscheme solarized
-" Enable persistent undo (basically a whole VCS). Move clutter out of pwd
-set undofile
+set background=dark
+" Enable persistent undo history and backups (basically a whole VCS).
+set backup undofile
+" Move tempfile clutter out of pwd
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 set undodir=~/.vim/undo
-" default of 4000ms is a bit too slow for gitgutter
+" Default of 4000ms is a bit too slow for gitgutter
 set updatetime=750
 " Use \C or PartialCaps to ensure case sensitive searches
-set ignorecase
-set smartcase
-" Misc. useful settings
-set cursorline
+set ignorecase smartcase
+" Crosshair for finding cursor
+set cursorline cursorcolumn
+" Highlight search matches. Great with incsearch. Clear with <C-L>
 set hlsearch
-set number
-set relativenumber
+" Relativenumber is great for <count> vertical motions
+set number relativenumber
+" Window title is useful with multiple open windows
 set title
-" Spacing and indenting settings
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-" The mouse does more harm than good
+" Don't use tabs. <tab>=4 spaces
+set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+" The mouse does more harm than good, disable it.
 set mouse=
-" Fancy ctag / cscope stuff
-set cscopetag
-set csto=1
-" Should not match pyc files, or other clutter for that matter
+" Use cscope in addition to ctags for C-]. Search ctag file first (1)
+set cscopetag csto=1
+" Grep-like tools should not match pyc files, or other clutter for that matter
 set wildignore+=*.pyc,*.bak,*/tmp/*,*.so,*.swp,*.zip
 
 " =========================  Plugin Variables  =========================
@@ -83,15 +81,15 @@ let g:gitgutter_sign_modified = '●'
 let g:gitgutter_sign_modified_removed = '●✘'
 let g:gitgutter_sign_removed = '✘_'
 let g:gitgutter_sign_removed_first_line = '✘‾'
-" Open quicklist on F12 for lint issues
+" Preserve cursor position when opening neomake quicklist
 let g:neomake_open_list = 2
-" Supplement YCM's completion options with tags/syntax
+" Supplement YCM's completion options with tags and lang keywords
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 " Only set motions I'll remember
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
-" Quicker matcher
+" Quicker CtrlP matcher
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " Folding is terrible even for markdown files
 let g:vim_markdown_folding_disabled=1
@@ -99,6 +97,7 @@ let g:vim_markdown_folding_disabled=1
 let g:sort_motion_flags = "ui"
 " Do project-wide searches with ag.vim
 let g:ag_working_path_mode="r"
+" Build ctags with YCM in mind
 let g:cscope_utils_ctags_extra_args=["--fields=+l"]
 
 " =========================  Normal Mode Mappings  =========================
