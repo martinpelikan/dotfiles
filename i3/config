@@ -147,6 +147,10 @@ bindsym $mod+Shift+p exec i3lock -c 000000
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
 bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
+# Toggle play/pause, next, previous
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # j4-make-config starts here
 # tango dark
