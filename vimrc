@@ -22,6 +22,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'plasticboy/vim-markdown'
 Plug 'python-rope/ropevim', { 'on': 'RopeOpenProject' }
 Plug 'rking/ag.vim'
+Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'simnalamburt/vim-mundo'
 Plug 'tell-k/vim-autopep8'
