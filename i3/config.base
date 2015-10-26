@@ -87,10 +87,13 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-# suspend host, make sure to add the following to sudoers file: mpelikan ALL=(ALL) NOPASSWD: /home/mpelikan/.i3/suspend, where the script runs a suspend command.
+# suspend
 bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the suspend shortcut. Do you really want to suspend?' -b 'Yes, suspend' 'i3lock && systemctl suspend'"
+# Lock screen
+bindsym $mod+Shift+p exec i3lock -c 000000
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -128,11 +131,8 @@ bar {
 }
 
 # Capture window, capture area.
-bindsym $mod+Print exec scrot -u -e 'mv $f ~/Pictures/'
-bindsym --release Print exec scrot -s -e 'mv $f ~/Pictures/'
-
-# Lock screen
-bindsym $mod+Shift+p exec i3lock -c 000000
+bindsym --release Alt+Print exec scrot -u -e 'mv $f ~/Screenshots/'
+bindsym --release Print exec scrot -s -e 'mv $f ~/Screenshots/'
 
 # Volume controls. TODO: Work with/without special key and pulse
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
