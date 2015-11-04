@@ -1,0 +1,17 @@
+Beaker==1.7.0.dev0
+bzr==2.6.0
+Editra==0.7.20
+futures==3.0.2
+greenlet==0.4.7
+Mako==1.0.3
+MarkupSafe==0.23
+mercurial==3.5.1
+msgpack-python==0.4.6
+neovim==0.0.38
+packaging==15.3
+rope==0.10.2
+ropemode==0.2
+ropevim==0.5.0
+trollius==1.0.4
+wxPython==3.0.2.0
+wxPython-common==3.0.2.0
