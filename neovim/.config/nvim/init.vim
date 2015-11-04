@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'benekastah/neomake'
@@ -33,7 +33,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'yssl/VIntSearch'
 call plug#end()
@@ -48,9 +48,9 @@ set background=dark
 " Enable persistent undo history and backups (basically a whole VCS).
 set backup undofile
 " Move tempfile clutter out of pwd
-set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
-set undodir=~/.vim/undo
+set backupdir=~/.config/nvim/backups
+set directory=~/.config/nvim/swaps
+set undodir=~/.config/nvim/undo
 " Default of 4000ms is a bit too slow for gitgutter
 set updatetime=750
 " Use \C or PartialCaps to ensure case sensitive searches
