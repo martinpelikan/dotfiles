@@ -7,7 +7,7 @@ i3lock-wrapper
 j4-dmenu-desktop-git
 j4-make-config-git
 keepass-plugin-http
-neovim-git
+openvpn-update-resolv-conf
 otf-pomodoro-git
 playerctl
 powerline-fonts-git

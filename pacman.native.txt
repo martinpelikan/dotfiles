@@ -8,6 +8,7 @@ bison
 bzip2
 cairo-infinality-ultimate
 chromium
+cmake
 coreutils
 cryptsetup
 ctags
@@ -16,6 +17,7 @@ device-mapper
 dhcpcd
 diffutils
 dmenu
+dnsmasq
 e2fsprogs
 evince
 fakeroot
@@ -24,6 +26,7 @@ filesystem
 findutils
 flex
 fontconfig-infinality-ultimate
+freerdp
 freetype2-infinality-ultimate
 gawk
 gcc
@@ -68,6 +71,7 @@ mercurial
 mlocate
 mtr
 nano
+neovim
 netctl
 openssh
 openvpn
@@ -88,6 +92,7 @@ python-pip
 python2-pip
 reflector
 reiserfsprogs
+remmina
 rsync
 rxvt-unicode
 s-nail
@@ -96,6 +101,7 @@ sed
 shadow
 skype
 sshfs
+stow
 strace
 sudo
 sysfsutils
