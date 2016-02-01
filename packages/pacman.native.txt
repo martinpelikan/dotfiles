@@ -24,6 +24,7 @@ fakeroot
 file
 filesystem
 findutils
+firefox
 flex
 fontconfig-infinality-ultimate
 freerdp
@@ -48,6 +49,7 @@ i3lock
 i3status
 iftop
 inetutils
+iotop
 iproute2
 iputils
 jfsutils
@@ -61,6 +63,7 @@ lightdm-gtk-greeter
 linux
 lm_sensors
 logrotate
+lsof
 lvm2
 m4
 make
@@ -70,9 +73,11 @@ mdadm
 mercurial
 mlocate
 mtr
+namcap
 nano
 neovim
 netctl
+ntfs-3g
 openssh
 openvpn
 os-prober
@@ -129,6 +134,7 @@ xorg-server
 xorg-xdpyinfo
 xorg-xrandr
 xorg-xrdb
+xournal
 xsel
 yaourt
 zsh
