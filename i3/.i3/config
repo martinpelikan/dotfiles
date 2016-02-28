@@ -141,8 +141,8 @@ colors {
 }
 
 # Capture window, capture area.
-bindsym Shift+Print exec scrot -u -e 'mv $f ~/Screenshots/'
-bindsym --release Print exec scrot -s -e 'mv $f ~/Screenshots/'
+bindsym Shift+Print exec scrot -u -e 'mv $f ~/screenshots/'
+bindsym --release Print exec scrot -s -e 'mv $f ~/screenshots/'
 
 # Volume controls. TODO: Work with/without special key and pulse
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+

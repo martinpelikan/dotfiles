@@ -13,7 +13,7 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'JCLiang/vim-cscope-utils'
 Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeToggle' }
 Plug 'kana/vim-textobj-user'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'
 Plug 'matze/vim-move'
