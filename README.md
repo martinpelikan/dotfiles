@@ -48,8 +48,7 @@ j4-make-config
 Back up the list of installed native non-base packages:
 
 ```Shell
-pacman -Qein | awk '/^Name/ { name=$3 } /^Groups/ { if ( $3 != "base" && $3 !=
-"base-devel" ) { print name } }' > pacman.native.txt
+pacman -Qein | awk '/^Name/ { name=$3 } /^Groups/ { if ( $3 != "base" && $3 != "base-devel" ) { print name } }' > pacman.native.txt
 ```
 
 Restore/install all the packages:
