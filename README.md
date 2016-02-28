@@ -2,6 +2,17 @@
 This project will eventually provide a set of scripts/dotfiles to set up my
 ideal dev environment in a minimal Arch install.
 
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [dotfiles](#)
+    - [Stow](#)
+    - [vim/neovim](#)
+    - [i3config](#)
+    - [Packages](#)
+        - [Pacman/Native](#)
+    - [Infinality](#)
+    - [TODO/investigate](#)
+
 ## Stow
 [GNU Stow](https://www.gnu.org/software/stow/) will create symlinks to the
 `dotfiles` directory from the default application paths.
