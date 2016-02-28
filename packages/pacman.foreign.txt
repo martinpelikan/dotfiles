@@ -9,11 +9,12 @@ j4-make-config-git
 keepass-plugin-http
 nerd-fonts-git
 openvpn-update-resolv-conf
-otf-pomodoro-git
 playerctl
 powerline-fonts-git
 python-powerline-git
+reflector-timer
 spotify
+ttf-font-awesome
 ttf-ms-win8
 ttf-ms-win8-arabic
 ttf-ms-win8-hebrew
@@ -25,4 +26,3 @@ ttf-ms-win8-sea
 ttf-ms-win8-thai
 ttf-ms-win8-zh_cn
 ttf-ms-win8-zh_tw
-ttf-octicons
