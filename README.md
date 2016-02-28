@@ -10,7 +10,7 @@ Stow
 
 From the dotfiles directory, run:
 ```Shell
-stow -R bash i3 neovim  pudb vim x zsh
+stow -R bash i3 neovim pudb termite vim x zsh
 ```
 
 vim/neovim
@@ -34,3 +34,13 @@ The [i3config](./i3/.i3/config) is templated using
 ```Shell
 j4-make-config
 ```
+
+Infinality
+----------
+Instructions here later.
+
+
+TODO/investigate
+----------------
+* tmux
+* fzf

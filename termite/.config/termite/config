@@ -1,8 +1,8 @@
 [options]
-font = Ubuntu Mono derivative Powerline Plus Nerd File Types Plus Font Awesome 14
+font = Ubuntu Mono derivative Powerline Plus Nerd File Types Plus Font Awesome 12
+scrollback_lines = 250000
 
 # Solarized dark color scheme
-
 [colors]
 foreground = #839496
 foreground_bold = #eee8d5
