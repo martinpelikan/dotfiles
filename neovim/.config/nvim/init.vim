@@ -1,19 +1,20 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized'
 Plug 'benekastah/neomake'
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'bps/vim-textobj-python'
 Plug 'bruno-/vim-man'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
+Plug 'frankier/neovim-colors-solarized-truecolor-only'
 Plug 'henrik/vim-indexed-search'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'JCLiang/vim-cscope-utils'
 Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeToggle' }
 Plug 'kana/vim-textobj-user'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'
 Plug 'matze/vim-move'
@@ -41,8 +42,8 @@ call plug#end()
 " =========================  Built-in Variables  =========================
 let g:python_host_prog='/usr/bin/python2'
 let g:python3_host_prog='/usr/bin/python3'
-
-" Solarized is easy on the eyes
+" True colour solarized.
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 colorscheme solarized
 set background=dark
 " Enable persistent undo history and backups (basically a whole VCS).
