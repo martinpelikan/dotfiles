@@ -20,7 +20,6 @@ i3lock
 iftop
 iotop
 keepass
-lib32-alsa-plugins
 lightdm
 lightdm-gtk-greeter
 lm_sensors
@@ -44,7 +43,6 @@ remmina
 rsync
 rxvt-unicode
 scrot
-skype
 sshfs
 stow
 strace

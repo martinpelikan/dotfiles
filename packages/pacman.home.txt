@@ -1,2 +1,3 @@
+skype
 virtualbox
 xf86-video-ati
