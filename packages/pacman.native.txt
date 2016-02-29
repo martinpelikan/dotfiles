@@ -40,7 +40,6 @@ python2-pip
 reflector
 remmina
 rsync
-rxvt-unicode
 scrot
 sshfs
 stow
@@ -53,7 +52,6 @@ transmission-gtk
 ttf-arphic-ukai
 ttf-arphic-uming
 ttf-dejavu
-urxvt-perls
 vlc
 whois
 xorg-server
