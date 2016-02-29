@@ -60,10 +60,8 @@ ttf-arphic-ukai
 ttf-arphic-uming
 ttf-dejavu
 urxvt-perls
-virtualbox
 vlc
 whois
-xf86-video-ati
 xorg-server
 xorg-xdpyinfo
 xorg-xrandr
