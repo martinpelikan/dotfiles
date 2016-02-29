@@ -54,7 +54,7 @@ pacman -Qein | awk '/^Name/ { name=$3 } /^Groups/ { if ( $3 != "base" && $3 != "
 Restore/install all the packages:
 
 ```Shell
-sudo pacman -S --needed $(< packages/pacman.native.txt)
+sudo pacman -S --needed $(< pacman.native.txt)
 ```
 
 ## Infinality
@@ -127,4 +127,17 @@ passwd
 exit
 umount -R /mnt
 reboot
+```
+
+Now that we've got the basic setup done...
+
+```Shell
+pacman -S git
+git clone https://github.com/martinpelikan/dotfiles.git
+sudo pacman -S --needed $(< dotfiles/packages/pacman.native.txt)
+systemctl enable lightdm.service
+
+useradd -m -G wheel -s /bin/zsh mpelikan
+passwd mpelikan
+sed -i -e 's/# %wheel ALL/%wheel ALL/' /etc/sudoers
 ```
