@@ -63,4 +63,3 @@ Instructions here later.
 
 ## TODO/investigate
 * tmux
-* fzf

@@ -35,3 +35,4 @@ fi
 # Get proper colors for all file types
 eval `dircolors $HOME/.dircolors`
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

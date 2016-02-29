@@ -2,18 +2,17 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'benekastah/neomake'
 Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'bps/vim-textobj-python'
 Plug 'bruno-/vim-man'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'frankier/neovim-colors-solarized-truecolor-only'
 Plug 'henrik/vim-indexed-search'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'JCLiang/vim-cscope-utils'
 Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeToggle' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'
@@ -35,6 +34,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer' }
+Plug 'vim-airline/vim-airline-themes'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'yssl/VIntSearch'
 call plug#end()
@@ -91,8 +91,6 @@ let g:ycm_seed_identifiers_with_syntax = 1
 " Only set motions I'll remember
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
-" Quicker CtrlP matcher
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " Folding is terrible even for markdown files
 let g:vim_markdown_folding_disabled=1
 " Make all sorts case insensitive and remove duplicates
@@ -103,14 +101,14 @@ let g:ag_working_path_mode="r"
 let g:cscope_utils_ctags_extra_args=["--fields=+l"]
 
 " =========================  Normal Mode Mappings  =========================
+nn <C-p> :FZF<CR>
+nn <M-]> :Tags<CR>
 " EasyMotion substitute, up, down
 nn s <Plug>(easymotion-s2)
 nn <Leader>j <Plug>(easymotion-j)
 nn <Leader>k <Plug>(easymotion-k)
 " When ctags fail ...
 nn <leader>jd :YcmCompleter GoTo<CR>
-" CtrlP for tagfiles
-nn <M-]> :CtrlPTag<CR>
 " We basically have an IDE now
 nn <Leader>b :TagbarToggle<CR>
 " VIntSearch
