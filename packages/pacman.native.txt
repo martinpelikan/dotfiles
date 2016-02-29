@@ -1,6 +1,5 @@
 alsa-utils
 bind-tools
-cairo-infinality-ultimate
 chromium
 cmake
 ctags
@@ -9,9 +8,7 @@ dmenu
 dnsmasq
 dosfstools
 evince
-fontconfig-infinality-ultimate
 freerdp
-freetype2-infinality-ultimate
 ghostscript
 git
 go
@@ -67,5 +64,4 @@ xorg-xdpyinfo
 xorg-xrandr
 xorg-xrdb
 xsel
-yaourt
 zsh
