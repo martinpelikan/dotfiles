@@ -58,6 +58,16 @@ sudo pacman -S --needed $(< pacman.native.txt)
 ```
 
 ## Infinality
+```Shell
+sudo cat >> /etc/pacman.conf << EOF
+[infinality-bundle]
+Server = http://bohoomil.com/repo/$arch
+[infinality-bundle-fonts]
+Server = http://bohoomil.com/repo/fonts
+EOF
+sudo pacman-key -r 962DDE58 
+sudo pacman-key --lsign-key 962DDE58
+```
 Instructions here later.
 
 
@@ -135,6 +145,7 @@ Now that we've got the basic setup done...
 pacman -S git
 git clone https://github.com/martinpelikan/dotfiles.git
 sudo pacman -S --needed $(< dotfiles/packages/pacman.native.txt)
+yaourt -S --needed $(< dotfiles/packages/pacman.foreign.txt)
 systemctl enable lightdm.service
 
 useradd -m -G wheel -s /bin/zsh mpelikan
