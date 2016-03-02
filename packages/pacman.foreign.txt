@@ -1,5 +1,4 @@
 blockify
-brother-cups-wrapper-laser1
 chromium-pepper-flash
 drive
 i3blocks
@@ -8,6 +7,8 @@ j4-dmenu-desktop-git
 j4-make-config-git
 keepass-plugin-http
 nerd-fonts-git
+oh-my-zsh-git
+oh-my-zsh-powerlevel9k-theme-git
 openvpn-update-resolv-conf
 playerctl
 powerline-fonts-git
