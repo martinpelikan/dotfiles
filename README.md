@@ -144,8 +144,8 @@ Now that we've got the basic setup done...
 ```Shell
 pacman -S git
 git clone https://github.com/martinpelikan/dotfiles.git
-sudo pacman -S --needed $(< dotfiles/packages/pacman.native.txt)
-yaourt -S --needed $(< dotfiles/packages/pacman.foreign.txt)
+sudo pacman -S --needed --noconfirm $(< dotfiles/packages/pacman.native.txt)
+yaourt -S --needed --noconfirm $(< dotfiles/packages/pacman.foreign.txt)
 systemctl enable lightdm.service
 
 useradd -m -G wheel -s /bin/zsh mpelikan
