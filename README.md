@@ -28,7 +28,7 @@ These steps are meant as a reminder for me, not as a
 This was mostly tested/executed in a VM environment, YMMV.
 
 ```Shell
-bash -c "$(curl fsSL https://raw.githubusercontent.com/martinpelikan/dotfiles/master/scripts/01_install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/martinpelikan/dotfiles/master/scripts/01_install.sh)"
 ```
 
 ## TODO/investigate

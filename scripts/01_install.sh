@@ -8,10 +8,10 @@ timedatectl set-ntp true
 
 # Create partitions
 parted "$DEVICE" mklabel msdos
-parted "$DEVICE" mkpart primary ext4 1MiB $"ROOT_END"GiB
+parted "$DEVICE" mkpart primary ext4 1MiB "$ROOT_END"GiB
 parted "$DEVICE" set 1 boot on
-parted "$DEVICE" mkpart primary linux-swap $"ROOT_END"GiB $"SWAP_SIZE"GiB
-parted "$DEVICE" mkpart primary ext4 $"SWAP_START"GiB 100%
+parted "$DEVICE" mkpart primary linux-swap "$ROOT_END"GiB "$SWAP_SIZE"GiB
+parted "$DEVICE" mkpart primary ext4 "$SWAP_START"GiB 100%
 
 # Create file systems
 mkfs.ext4 "$DEVICE"1
