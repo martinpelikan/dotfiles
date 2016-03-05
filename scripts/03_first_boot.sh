@@ -2,6 +2,7 @@
 set -x
 
 COUNTRY=Canada
+GPU_DRIVER="xf86-video-vesa"
 
 # Get a sane mirrorlist to speed this up
 sudo pacman -S --noconfirm reflector
@@ -42,6 +43,7 @@ rm -rf yaourt package-query
 git clone https://github.com/martinpelikan/dotfiles.git
 sudo pacman -S --needed --noconfirm $(< dotfiles/packages/pacman.native.txt)
 sudo pacman -S --needed --noconfirm $(< dotfiles/packages/pacman.external.txt)
+sudo pacman -S --needed --noconfirm "$GPU_DRIVER"
 # makepkg doesn't like being run as root :(
 yaourt -S --needed --noconfirm $(< dotfiles/packages/pacman.foreign.txt)
 sudo pip2 install -r dotfiles/packages/pip2.txt
