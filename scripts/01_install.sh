@@ -4,7 +4,7 @@ set -x
 export DEVICE="/dev/sda"
 ROOT_END=20
 SWAP_SIZE=4
-SWAP_END=$[ROOT_SIZE+SWAP_SIZE]
+SWAP_END=$[ROOT_END+SWAP_SIZE]
 
 timedatectl set-ntp true
 
