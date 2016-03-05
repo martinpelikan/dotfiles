@@ -12,8 +12,6 @@ oh-my-zsh-powerlevel9k-theme-git
 openvpn-update-resolv-conf
 otf-neris
 playerctl
-powerline-fonts-git
-python-powerline-git
 reflector-timer
 spotify
 ttf-aller

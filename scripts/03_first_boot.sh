@@ -42,7 +42,8 @@ rm -rf yaourt package-query
 git clone https://github.com/martinpelikan/dotfiles.git
 sudo pacman -S --needed --noconfirm $(< dotfiles/packages/pacman.native.txt)
 sudo pacman -S --needed --noconfirm $(< dotfiles/packages/pacman.external.txt)
-sudo yaourt -S --needed --noconfirm $(< dotfiles/packages/pacman.foreign.txt)
+# makepkg doesn't like being run as root :(
+yaourt -S --needed --noconfirm $(< dotfiles/packages/pacman.foreign.txt)
 sudo pip2 install -r dotfiles/packages/pip2.txt
 sudo pip3 install -r dotfiles/packages/pip3.txt
 
@@ -64,4 +65,4 @@ sudo systemctl enable lightdm.service
 sudo systemctl enable reflector.timer
 
 # zsh > bash
-chsh /bin/zsh
+chsh `which zsh`
