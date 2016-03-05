@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 ROOT_END=20
 SWAP_SIZE=4
 SWAP_END=$[ROOT_SIZE+SWAP_SIZE]
@@ -10,7 +11,7 @@ timedatectl set-ntp true
 parted "$DEVICE" mklabel msdos
 parted "$DEVICE" mkpart primary ext4 1MiB "$ROOT_END"GiB
 parted "$DEVICE" set 1 boot on
-parted "$DEVICE" mkpart primary linux-swap "$ROOT_END"GiB "$SWAP_SIZE"GiB
+parted "$DEVICE" mkpart primary linux-swap "$ROOT_END"GiB "$SWAP_END"GiB
 parted "$DEVICE" mkpart primary ext4 "$SWAP_START"GiB 100%
 
 # Create file systems
