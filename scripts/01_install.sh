@@ -40,4 +40,4 @@ cp 03_first_boot.sh /mnt
 arch-chroot /mnt ./02_chroot_install.sh
 
 umount -R /mnt
-echo "Reboot when ready, unmount ISO/CD drive.
+echo "Reboot when ready, unmount ISO/CD drive."
