@@ -27,7 +27,7 @@ IFACE_NAME=$(ls /sys/class/net | expand | head -n1)
 systemctl enable dhcpcd@"$IFACE_NAME".service
 
 # Create my user and add it to wheel group
-useradd -m -G wheel -s /bin/zsh "$NEW_USER"
+useradd -m -G wheel -s /bin/bash "$NEW_USER"
 sed -i -e 's/# %wheel ALL/%wheel ALL/' /etc/sudoers
 
 # XXX: Change these passwords!

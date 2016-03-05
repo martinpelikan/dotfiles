@@ -58,3 +58,6 @@ sudo echo "COUNTRY=$COUNTRY" > /etc/conf.d/reflector.conf
 # Enable services
 sudo systemctl enable lightdm.service
 sudo systemctl enable reflector.timer
+
+# zsh > bash
+chsh /bin/zsh
