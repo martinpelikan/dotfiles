@@ -1,4 +1,1 @@
-freetype2-infinality-ultimate
-fontconfig-infinality-ultimate
-cairo-infinality-ultimate
-yaourt
+infinality-bundle

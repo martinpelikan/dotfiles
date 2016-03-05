@@ -49,9 +49,6 @@ termite
 tk
 traceroute
 transmission-gtk
-ttf-arphic-ukai
-ttf-arphic-uming
-ttf-dejavu
 vlc
 whois
 xorg-server
