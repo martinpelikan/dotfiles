@@ -8,14 +8,15 @@ sudo pacman -S --noconfirm reflector
 /usr/bin/reflector --protocol http --latest 30 --number 20 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Add Infinality repos
-sudo cat >> /etc/pacman.conf << EOF
+# Note: pacman.conf owned by root, not wheel
+sudo runuser -l root -c 'cat >> /etc/pacman.conf << EOF
 
 [infinality-bundle]
 Server = http://bohoomil.com/repo/$arch
 
 [infinality-bundle-fonts]
 Server = http://bohoomil.com/repo/fonts
-EOF
+EOF'
 # Add Infinality signatures
 sudo pacman-key -r 962DDE58
 sudo pacman-key --lsign-key 962DDE58
