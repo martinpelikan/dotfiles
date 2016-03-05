@@ -21,6 +21,9 @@ EOF'
 sudo pacman-key -r 962DDE58
 sudo pacman-key --lsign-key 962DDE58
 
+# Sync the new databases/upgrade outdated packages
+sudo pacman -Syu --noconfirm
+
 # Install git
 sudo pacman -S --noconfirm git
 
