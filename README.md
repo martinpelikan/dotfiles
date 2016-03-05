@@ -2,16 +2,37 @@
 This project will eventually provide a set of scripts/dotfiles to set up my
 ideal dev environment in a minimal Arch install.
 
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+## Packages
 
-- [dotfiles](#)
-    - [Stow](#)
-    - [vim/neovim](#)
-    - [i3config](#)
-    - [Packages](#)
-        - [Pacman/Native](#)
-    - [Infinality](#)
-    - [TODO/investigate](#)
+### Pacman/Native
+Back up the list of installed native non-base packages:
+
+```Shell
+pacman -Qein | awk '/^Name/ { name=$3 } /^Groups/ { if ( $3 != "base" && $3 != "base-devel" ) { print name } }' > pacman.native.txt
+```
+
+Restore/install all the packages:
+
+```Shell
+sudo pacman -S --needed --noconfirm $(< pacman.native.txt)
+```
+
+## Infinality
+```Shell
+```
+
+## Basic Arch setup guide
+These steps are meant as a reminder for me, not as a
+[general guide](https://wiki.archlinux.org/index.php/beginners'_guide).
+
+This was mostly tested/executed in a VM environment, YMMV.
+
+```Shell
+bash -c "$(curl fsSL https://raw.githubusercontent.com/martinpelikan/dotfiles/master/scripts/01_install.sh)"
+```
+
+## TODO/investigate
+* tmux
 
 ## Stow
 [GNU Stow](https://www.gnu.org/software/stow/) will create symlinks to the
@@ -40,115 +61,4 @@ The [i3config](./i3/.i3/config) is templated using
 [config.base](./i3/.i3/config.base) and then run:
 ```Shell
 j4-make-config
-```
-
-## Packages
-
-### Pacman/Native
-Back up the list of installed native non-base packages:
-
-```Shell
-pacman -Qein | awk '/^Name/ { name=$3 } /^Groups/ { if ( $3 != "base" && $3 != "base-devel" ) { print name } }' > pacman.native.txt
-```
-
-Restore/install all the packages:
-
-```Shell
-sudo pacman -S --needed $(< pacman.native.txt)
-```
-
-## Infinality
-```Shell
-sudo cat >> /etc/pacman.conf << EOF
-[infinality-bundle]
-Server = http://bohoomil.com/repo/$arch
-[infinality-bundle-fonts]
-Server = http://bohoomil.com/repo/fonts
-EOF
-sudo pacman-key -r 962DDE58 
-sudo pacman-key --lsign-key 962DDE58
-```
-Instructions here later.
-
-
-## TODO/investigate
-* tmux
-
-## Basic Arch setup guide
-These steps are meant as a reminder for me, not as a
-[general guide](https://wiki.archlinux.org/index.php/beginners'_guide).
-
-Also, these are mostly valid in a VM/VBox environment.
-
-```Shell
-timedatectl set-ntp true
-
-# Create partitions
-parted /dev/sda
-mklabel msdos
-mkpart primary ext4 1MiB 20GiB
-set 1 boot on
-mkpart primary linux-swap 20GiB 24GiB
-mkpart primary ext4 24GiB 100%
-quit
-
-# Create file systems
-mkfs.ext4 /dev/sda1
-mkfs.ext4 /dev/sda3
-mkswap /dev/sda2
-swapon /dev/sda2
-
-# Mount the file systems
-mount /dev/sda1 /mnt
-mkdir /mnt/home
-mount /dev/sda3 /mnt/home
-
-# Move closest server to top of list.
-# vim /etc/pacman.d/mirrorlist
-pacstrap /mnt base base-devel
-
-genfstab -U /mnt /mnt/etc/fstab
-arch-chroot /mnt /bin/bash
-
-# Locale settings
-sed -i -e 's/#en_US\.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
-locale-gen
-echo "LANG=en_US.UTF-8" > /etc/locale.conf
-ln -s /usr/share/zoneinfo/America/Vancouver /etc/localtime
-hwclock --systohc --utc
-
-# Boot loader
-pacman -S --noconfirm grub os-prober
-grub-install /dev/sda
-grub-mkconfig -o /boot/grub/grub.cfg
-
-# Hostname
-echo "mpelikan-arch" > /etc/hostname
-sed -i -e 's/localhost$/localhost mpelikan-arch/' /etc/hosts
-
-# Network
-# use ip link, then set DHCP on that.
-systemctl enable dhcpcd@interface.service
-
-# Password
-passwd
-
-# Fin
-exit
-umount -R /mnt
-reboot
-```
-
-Now that we've got the basic setup done...
-
-```Shell
-pacman -S git
-git clone https://github.com/martinpelikan/dotfiles.git
-sudo pacman -S --needed --noconfirm $(< dotfiles/packages/pacman.native.txt)
-yaourt -S --needed --noconfirm $(< dotfiles/packages/pacman.foreign.txt)
-systemctl enable lightdm.service
-
-useradd -m -G wheel -s /bin/zsh mpelikan
-passwd mpelikan
-sed -i -e 's/# %wheel ALL/%wheel ALL/' /etc/sudoers
 ```
