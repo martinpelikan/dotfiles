@@ -23,13 +23,13 @@ swapon "$DEVICE"2
 
 # Mount the file systems
 mount "$DEVICE"1 /mnt
-mkdir /mnt/home
+mkdir -p /mnt/home
 mount "$DEVICE"3 /mnt/home
 
 # TODO: Update the mirror list using reflector?
 pacstrap /mnt base base-devel
 
-genfstab -U /mnt /mnt/etc/fstab
+genfstab -U /mnt >> /mnt/etc/fstab
 
 curl -fsSL https://raw.githubusercontent.com/martinpelikan/dotfiles/master/scripts/02_chroot_install.sh > 02_chroot_install.sh
 curl -fsSL https://raw.githubusercontent.com/martinpelikan/dotfiles/master/scripts/03_first_boot.sh > 03_first_boot.sh
