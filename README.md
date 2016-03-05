@@ -8,7 +8,8 @@ These steps are meant as a reminder for me, not as a
 
 This was mostly tested/executed in a VM environment, YMMV (Piping to shell from the Interwebs? What can possibly go wring?)
 ```Shell
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/martinpelikan/dotfiles/master/scripts/01_install.sh)"
+curl -fsSL https://raw.githubusercontent.com/martinpelikan/dotfiles/master/scripts/01_install.sh > 01_install.sh
+bash ./01_install.sh
 ```
 
 ## Package Management
