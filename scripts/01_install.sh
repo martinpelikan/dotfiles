@@ -1,9 +1,10 @@
 #!/bin/bash
 set -x
+
+export DEVICE="/dev/sda"
 ROOT_END=20
 SWAP_SIZE=4
 SWAP_END=$[ROOT_SIZE+SWAP_SIZE]
-export DEVICE="/dev/sda"
 
 timedatectl set-ntp true
 
@@ -30,6 +31,8 @@ pacstrap /mnt base base-devel
 
 genfstab -U /mnt /mnt/etc/fstab
 
+curl -fsSL https://raw.githubusercontent.com/martinpelikan/dotfiles/master/scripts/02_chroot_install.sh > 02_chroot_install.sh
+chmod u+x 02_chroot_install.sh
 cp 02_chroot_install.sh /mnt
 arch-chroot /mnt ./02_chroot_install.sh
 
