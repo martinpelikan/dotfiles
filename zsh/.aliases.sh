@@ -53,5 +53,5 @@ pacnativebackup() {
     }' > ~/dotfiles/packages/pacman.native.txt
 }
 pacforeignbackup() {
-    pacman -Qeim > ~/dotfiles/packages/pacman.foreign.txt
+    pacman -Qqem > ~/dotfiles/packages/pacman.foreign.txt
 }
