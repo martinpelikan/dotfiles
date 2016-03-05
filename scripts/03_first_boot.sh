@@ -49,7 +49,7 @@ sudo pip3 install -r dotfiles/packages/pip3.txt
 
 # Get all the dotfiles
 cd dotfiles
-stow -R bash i3 neovim pudb termite vim x zsh
+stow -R i3 neovim pudb termite vim x zsh
 cd ..
 
 # Install the best editor
@@ -58,11 +58,11 @@ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 # And all of the awesome plugins
 nvim +PlugInstall +qall
 
-sudo echo "COUNTRY=$COUNTRY" > /etc/conf.d/reflector.conf
-
 # Enable services
 sudo systemctl enable lightdm.service
+
+sudo runuser -l root -c "echo COUNTRY=$COUNTRY > /etc/conf.d/reflector.conf"
 sudo systemctl enable reflector.timer
 
 # zsh > bash
-chsh `which zsh`
+chsh mpelikan `which zsh`
