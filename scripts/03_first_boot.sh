@@ -68,3 +68,9 @@ sudo systemctl enable reflector.timer
 
 # zsh > bash
 sudo chsh mpelikan `which zsh`
+
+# No idea how this works, but anyway...
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts
+curl -fLo "Ubuntu Mono derivativce Powerline Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/UbuntuMono/Regular/complete/Ubuntu%20Mono%20derivative%20Powerline%20Nerd%20Font%20Complete.ttf
+cd ~

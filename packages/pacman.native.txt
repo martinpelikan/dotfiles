@@ -49,6 +49,7 @@ termite
 tk
 traceroute
 transmission-gtk
+ttf-ubuntu-font-family-ib
 vlc
 whois
 xorg-server
