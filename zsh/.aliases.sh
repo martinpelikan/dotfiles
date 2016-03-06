@@ -55,3 +55,9 @@ pacnativebackup() {
 pacforeignbackup() {
     pacman -Qqem > ~/dotfiles/packages/pacman.foreign.txt
 }
+vboxmodprobe() {
+    sudo modprobe vboxnetflt
+    sudo modprobe vboxnetadp
+    sudo modprobe vboxpci
+    sudo modprobe vboxdrv
+}
