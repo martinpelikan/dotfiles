@@ -67,4 +67,4 @@ sudo runuser -l root -c "echo COUNTRY=$COUNTRY > /etc/conf.d/reflector.conf"
 sudo systemctl enable reflector.timer
 
 # zsh > bash
-chsh mpelikan `which zsh`
+sudo chsh mpelikan `which zsh`
