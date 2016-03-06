@@ -31,13 +31,16 @@ pacstrap /mnt base base-devel
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-curl -fsSL https://raw.githubusercontent.com/martinpelikan/dotfiles/master/scripts/02_chroot_install.sh > 02_chroot_install.sh
-curl -fsSL https://raw.githubusercontent.com/martinpelikan/dotfiles/master/scripts/03_first_boot.sh > 03_first_boot.sh
+curl -fLo "02_chroot_install.sh" https://raw.githubusercontent.com/martinpelikan/dotfiles/master/scripts/02_chroot_install.sh
+curl -fLo "03_first_boot.sh" https://raw.githubusercontent.com/martinpelikan/dotfiles/master/scripts/03_first_boot.sh
 chmod u+x 02_chroot_install.sh
 chmod u+x 03_first_boot.sh
 cp 02_chroot_install.sh /mnt
 cp 03_first_boot.sh /mnt
 arch-chroot /mnt ./02_chroot_install.sh
+
+# Clean up scripts from /
+rm 02_chroot_install.sh 03_first_boot.sh
 
 umount -R /mnt
 echo "Reboot when ready, unmount ISO/CD drive."
