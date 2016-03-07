@@ -2,10 +2,17 @@
 set -x
 
 export DEVICE="/dev/sda"
+export NEW_USER="mpelikan"
+
+# Partition settings, by default:
+# / = 20GB
+# swap = 4GB
+# /home = rest of disk
 ROOT_END=20
 SWAP_SIZE=4
 SWAP_END=$[ROOT_END+SWAP_SIZE]
 
+# Use NTP, unnecessary?
 timedatectl set-ntp true
 
 # Create partitions
@@ -26,21 +33,25 @@ mount "$DEVICE"1 /mnt
 mkdir -p /mnt/home
 mount "$DEVICE"3 /mnt/home
 
-# TODO: Update the mirror list using reflector?
+# TODO: Programatically pick fastest mirror here.
 pacstrap /mnt base base-devel
 
+# Make sure partitions are mounted to create proper fstab
 genfstab -U /mnt >> /mnt/etc/fstab
 
+# Locale, bootleader, hostname, network, user setup
 curl -fLo "02_chroot_install.sh" https://raw.githubusercontent.com/martinpelikan/dotfiles/master/scripts/02_chroot_install.sh
-curl -fLo "03_first_boot.sh" https://raw.githubusercontent.com/martinpelikan/dotfiles/master/scripts/03_first_boot.sh
 chmod u+x 02_chroot_install.sh
-chmod u+x 03_first_boot.sh
 cp 02_chroot_install.sh /mnt
-cp 03_first_boot.sh /mnt
 arch-chroot /mnt ./02_chroot_install.sh
 
+# To be invoked by user on first login
+curl -fLo "03_first_boot.sh" https://raw.githubusercontent.com/martinpelikan/dotfiles/master/scripts/03_first_boot.sh
+chmod u+x 03_first_boot.sh
+mv 03_first_boot.sh "/mnt/home/$NEW_USER"
+
 # Clean up scripts from /
-rm 02_chroot_install.sh 03_first_boot.sh
+rm /mnt/01_install.sh /mnt/02_chroot_install.sh
 
 umount -R /mnt
 echo "Reboot when ready, unmount ISO/CD drive."

@@ -4,7 +4,6 @@ set -x
 HOSTNAME="mpelikan-arch"
 PASSWORD="ChangeMe321"
 TIMEZONE="America/Vancouver"
-NEW_USER="mpelikan"
 
 # Locale
 sed -i -e 's/#en_US\.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen

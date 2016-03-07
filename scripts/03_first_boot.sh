@@ -2,6 +2,7 @@
 set -x
 
 COUNTRY=Canada
+NEW_USER=mpelikan
 GPU_DRIVER="xf86-video-vesa"
 
 # Get a sane mirrorlist to speed this up
@@ -58,18 +59,17 @@ cd ..
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 # And all of the awesome plugins
-nvim +PlugInstall +qall
+nvim +PlugInstall -c "silent only" +qall
 
 # Enable services
 sudo systemctl enable lightdm.service
-
 sudo runuser -l root -c "echo COUNTRY=$COUNTRY > /etc/conf.d/reflector.conf"
 sudo systemctl enable reflector.timer
 
-# zsh > bash
-sudo chsh mpelikan `which zsh`
+# zsh > bash, but has to be installed first
+sudo chsh "$NEW_USER" -s `which zsh`
 
-# No idea how this works, but anyway...
+# I still don't get fonts. Oh well.
 mkdir -p ~/.local/share/fonts
 cd ~/.local/share/fonts
 curl -fLo "Ubuntu Mono derivativce Powerline Font Complete.ttf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/UbuntuMono/Regular/complete/Ubuntu%20Mono%20derivative%20Powerline%20Nerd%20Font%20Complete.ttf
