@@ -17,3 +17,4 @@ if hash VBoxClient-all 2>/dev/null; then
 fi
 
 eval $(ssh-agent)
+xrandr --output VGA-0 --auto --left-of VGA-1
