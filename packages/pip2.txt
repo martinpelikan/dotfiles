@@ -1,4 +1,6 @@
 Beaker
+bzr
+Editra
 funcsigs
 futures
 greenlet
@@ -9,5 +11,10 @@ msgpack-python
 neovim
 packaging
 pyparsing
+rope
+ropemode
+ropevim
 six
 trollius
+wxPython
+wxPython-common

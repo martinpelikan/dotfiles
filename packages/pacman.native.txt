@@ -7,6 +7,7 @@ cups
 dmenu
 dnsmasq
 dosfstools
+dunst
 evince
 freerdp
 ghostscript
@@ -20,6 +21,7 @@ i3lock
 iftop
 iotop
 keepass
+libnotify
 lightdm
 lightdm-gtk-greeter
 lm_sensors

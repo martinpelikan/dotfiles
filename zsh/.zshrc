@@ -44,3 +44,5 @@ fi
 eval `dircolors $HOME/.dircolors`
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Why on earth would you want fuzzy search here...
+bindkey '^R' history-incremental-search-backward

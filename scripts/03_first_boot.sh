@@ -52,7 +52,7 @@ sudo pip3 install -r dotfiles/packages/pip3.txt
 
 # Get all the dotfiles
 cd dotfiles
-stow -R i3 neovim pudb termite vim x zsh
+stow -R bin dunst git i3 i3blocks neovim pudb termite vim x zsh
 cd ..
 
 # Install the best editor

@@ -47,7 +47,7 @@ sudo pacman -S infinality-bundle
 
 From the dotfiles directory, run:
 ```Shell
-stow -R bin git i3 i3blocks neovim pudb termite vim x zsh
+stow -R bin dunst git i3 i3blocks neovim pudb termite vim x zsh
 ```
 
 ## vim/neovim

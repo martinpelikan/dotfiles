@@ -11,7 +11,7 @@ Plug 'henrik/vim-indexed-search'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'JCLiang/vim-cscope-utils'
 Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeToggle' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-completion --key-bindings --no-update-rc' }
 Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'Lokaltog/vim-easymotion'
