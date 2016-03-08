@@ -16,5 +16,9 @@ if hash VBoxClient-all 2>/dev/null; then
     VBoxClient-all
 fi
 
-eval $(ssh-agent)
-xrandr --output VGA-0 --auto --left-of VGA-1
+if [ -z "$SSH_AUTH_SOCK" ] || [ -z "$SSH_AGENT_PID" ]; then
+    eval $(ssh-agent)
+fi
+
+connectedOutputs=$(xrandr | grep " connected" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/")
+[[ $connectedOutputs =~ "VGA-0" ]] && [[ $connectedOutputs =~ "VGA-1" ]] && xrandr --output VGA-0 --auto --left-of VGA-1
