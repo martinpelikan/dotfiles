@@ -15,3 +15,5 @@ export TERMINAL=termite
 if hash VBoxClient-all 2>/dev/null; then
     VBoxClient-all
 fi
+
+eval $(ssh-agent)
