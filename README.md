@@ -71,7 +71,8 @@ The [i3config](./i3/.i3/config) is templated using
 [j4tools](http://www.j4tools.org/). Make modifications to
 [config.base](./i3/.i3/config.base) and then run:
 ```Shell
-j4-make-config
+# Pick your theme if you don't like tango-dark
+j4-make-config tango-dark
 ```
 
 ## tmux

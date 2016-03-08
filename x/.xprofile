@@ -10,3 +10,8 @@ setxkbmap -option ctrl:nocaps
 export TERMINAL=termite
 # Basically just urxvt settings, may delete later...
 [[ -f ~/.Xresources ]] && xrdb -I$HOME -merge ~/.Xresources
+
+# Run all the VBox guest addition features
+if hash VBoxClient-all 2>/dev/null; then
+    VBoxClient-all
+fi

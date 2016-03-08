@@ -28,13 +28,19 @@ pip2upgrade() {
     pip2 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 sudo pip2 install -U
 }
 pip2track() {
-    pip2 freeze > ~/dotfiles/packages/pip2.txt
+    pip2 freeze | grep -v '^\-e' | cut -d = -f 1 > ~/dotfiles/packages/pip2.txt
+}
+pip2install() {
+    sudo pip2 install --upgrade $( < ~/dotfiles/packages/pip2.txt )
 }
 pip3upgrade() {
     pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 sudo pip3 install -U
 }
 pip3track() {
-    pip3 freeze > ~/dotfiles/packages/pip3.txt
+    pip3 freeze | grep -v '^\-e' | cut -d = -f 1  > ~/dotfiles/packages/pip3.txt
+}
+pip2install() {
+    sudo pip3 install --upgrade $( < ~/dotfiles/packages/pip3.txt )
 }
 pacnativebackup() {
     pacman -Qein | awk '/^Name/ { name=$3 } /^Groups/ {
