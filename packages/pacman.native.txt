@@ -2,6 +2,7 @@ alsa-utils
 bind-tools
 chromium
 cmake
+cscope
 ctags
 cups
 dmenu
@@ -42,6 +43,7 @@ python2-pip
 reflector
 remmina
 rsync
+samba
 scrot
 sshfs
 stow

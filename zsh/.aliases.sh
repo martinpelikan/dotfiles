@@ -48,13 +48,15 @@ pacnativebackup() {
             $3 != "base" &&
             $3 != "base-devel" &&
             $3 != "infinality-bundle" &&
-            name != "yaourt" &&
-            name != "virtualbox" &&
-            name != "xf86-video-ati" &&
-            name != "skype" &&
-            name != "playonlinux" &&
             name != "lib32-alsa-plugins" &&
-            name != "linux-headers" \
+            name != "linux-headers" &&
+            name != "playonlinux" &&
+            name != "skype" &&
+            name != "virtualbox" &&
+            name != "virtualbox-guest-utils" &&
+            name != "xf86-video-ati" &&
+            name != "xf86-video-vesa" &&
+            name != "yaourt" \
         ) { print name }
     }' > ~/dotfiles/packages/pacman.native.txt
 }
@@ -62,8 +64,5 @@ pacforeignbackup() {
     pacman -Qqem > ~/dotfiles/packages/pacman.foreign.txt
 }
 vboxmodprobe() {
-    sudo modprobe vboxnetflt
-    sudo modprobe vboxnetadp
-    sudo modprobe vboxpci
-    sudo modprobe vboxdrv
+    sudo modprobe -a vboxnetflt vboxnetadp vboxpci vboxdrv
 }

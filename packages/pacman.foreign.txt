@@ -10,9 +10,11 @@ oh-my-zsh-git
 oh-my-zsh-powerlevel9k-theme-git
 openvpn-update-resolv-conf
 otf-neris
+package-query
 playerctl
 reflector-timer
 spotify
 ttf-aller
 ttf-brill
 ttf-envy-code-r
+yaourt
