@@ -152,5 +152,10 @@ aug END
 
 aug special_types
     au BufNewFile,BufRead *.tac,master.cfg setlocal ft=python  " buildbot
+    au BufNewFile,BufRead .xprofile setlocal ft=sh
     au BufNewFile,BufRead README setlocal ft=rst
+aug END
+
+aug special_formats
+    au FileType xml setl sw=2 sts=2 et
 aug END
