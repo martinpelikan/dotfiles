@@ -3,3 +3,7 @@
 	name = Martin Pelikan
 [push]
 	default = matching
+[mergetool]
+	path = nvim
+[merge]
+	tool = vimdiff
