@@ -1,6 +1,5 @@
 Beaker
 bzr
-Editra
 funcsigs
 futures
 greenlet
@@ -16,5 +15,3 @@ ropemode
 ropevim
 six
 trollius
-wxPython
-wxPython-common

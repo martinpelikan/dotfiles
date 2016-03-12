@@ -9,7 +9,6 @@ docopt
 dotfiles
 greenlet
 hangups
-hangups-urwid
 i3pystatus
 iotop
 ipdb
@@ -30,10 +29,8 @@ psutil
 ptyprocess
 pudb
 purplex
-pyalpm
 pyelftools
 Pygments
-pygobject
 pyparsing
 pyxdg
 readlike
