@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Hangups
+Comment=Google Hangouts client for CLI
+Exec=hangups
+Terminal=true
+Type=Application
+Categories=Application;
