@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Hangups
 Comment=Google Hangouts client for CLI
-Exec=hangups
+Exec=hangups --col-scheme solarized-dark
 Terminal=true
 Type=Application
 Categories=Application;
