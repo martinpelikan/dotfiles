@@ -28,7 +28,5 @@ fi
 export PATH=$PATH:$HOME/bin
 # This is a lie, but needed to make some apps happy...
 export TERM='xterm-256color'
-# For gdrive and go-sack
+# For gdrive
 export GOPATH=$HOME/go
-
-eval "$(sack init)"
