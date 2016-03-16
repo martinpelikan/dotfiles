@@ -12,6 +12,8 @@ alias :e='nvim'
 alias :E='nvim .'
 alias :q='exit'
 
+alias S=sack
+
 alias -s jpg=chromium
 alias -s pdf=chromium
 alias -s png=chromium
