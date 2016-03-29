@@ -1,2 +1,3 @@
-private_rcs/
 neovim/.config/nvim/.netrwhist
+zsh/.config/zsh/.zcompdump*
+zsh/.config/zsh/zshrc.private
