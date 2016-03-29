@@ -55,7 +55,7 @@ min_width=100.0dC
 [openvpn]
 label=VPN:
 interval=20
-command=$HOME/.config/i3blcoks/config/openvpn.sh
+command=$HOME/.config/i3blocks/openvpn.sh
 min_width=VPN: DOWN
 
 [time]
