@@ -38,7 +38,9 @@ os-prober
 pavucontrol
 pulseaudio
 pulseaudio-alsa
+python-neovim
 python-pip
+python2-neovim
 python2-pip
 reflector
 remmina

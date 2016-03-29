@@ -1,4 +1,6 @@
+gimp
 playonlinux
+sane
 skype
 virtualbox
 xf86-video-ati

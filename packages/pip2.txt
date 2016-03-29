@@ -1,5 +1,6 @@
 Beaker
 bzr
+click
 funcsigs
 futures
 greenlet
@@ -8,6 +9,7 @@ Mako
 MarkupSafe
 msgpack-python
 neovim
+netsnmp-python
 packaging
 pyparsing
 rope

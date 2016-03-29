@@ -52,19 +52,10 @@ separator=false
 interval=10
 min_width=100.0dC
 
-[battery]
-label=⚡
-interval=30
-
-[mediaplayer]
-instance=spotify
-interval=5
-signal=10
-
 [openvpn]
 label=VPN:
 interval=20
-command=$HOME/.openvpn.sh
+command=$HOME/.config/i3blcoks/config/openvpn.sh
 min_width=VPN: DOWN
 
 [time]
@@ -74,7 +65,7 @@ interval=1
 color=#00ffff
 separator=false
 
-[date]
+[date-icon]
 full_text=
 command=chromium https://calendar.google.com/ > /dev/null 2>&1
 separator=false

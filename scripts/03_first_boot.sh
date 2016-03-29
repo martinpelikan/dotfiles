@@ -47,8 +47,6 @@ sudo pacman -S --needed --noconfirm $(< dotfiles/packages/pacman.external.txt)
 sudo pacman -S --needed --noconfirm "$GPU_DRIVER"
 # makepkg doesn't like being run as root :(
 yaourt -S --needed --noconfirm $(< dotfiles/packages/pacman.foreign.txt)
-sudo pip2 install -r dotfiles/packages/pip2.txt
-sudo pip3 install -r dotfiles/packages/pip3.txt
 
 # Get all the dotfiles
 cd dotfiles

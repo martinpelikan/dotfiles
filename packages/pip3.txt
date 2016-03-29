@@ -2,6 +2,7 @@ aiohttp
 appdirs
 blockify
 chardet
+click
 colour
 ConfigArgParse
 decorator

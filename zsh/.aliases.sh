@@ -12,6 +12,7 @@ alias :e='nvim'
 alias :E='nvim .'
 alias :q='exit'
 
+# Shorthand for sack/sag in ~/bin
 alias S=sack
 
 alias -s jpg=chromium
@@ -22,7 +23,6 @@ alias -s wmv=vlc
 
 alias -s cfg=vim
 alias -s md=vim
-alias -s py=vim
 alias -s rst=vim
 alias -s txt=vim
 
@@ -44,20 +44,22 @@ pip3track() {
 pip2install() {
     sudo pip3 install --upgrade $( < ~/dotfiles/packages/pip3.txt )
 }
+# Would be nicer if we could use an exclusion file instead of this awk.
 pacnativebackup() {
     pacman -Qein | awk '/^Name/ { name=$3 } /^Groups/ {
         if ( \
             $3 != "base" &&
             $3 != "base-devel" &&
             $3 != "infinality-bundle" &&
+            $3 != "xorg-drivers" &&
+            name != "gimp" &&
             name != "lib32-alsa-plugins" &&
             name != "linux-headers" &&
             name != "playonlinux" &&
+            name != "sane" &&
             name != "skype" &&
             name != "virtualbox" &&
             name != "virtualbox-guest-utils" &&
-            name != "xf86-video-ati" &&
-            name != "xf86-video-vesa" &&
             name != "yaourt" \
         ) { print name }
     }' > ~/dotfiles/packages/pacman.native.txt
