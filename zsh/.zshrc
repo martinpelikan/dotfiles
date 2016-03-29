@@ -29,9 +29,9 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 # Put any machine-specific or sensitive info here
-if [ -e "$HOME/Dotfiles/private/zshrc" ]
+if [ -e "$HOME/dotfiles/private/zshrc" ]
 then
-    source "$HOME/Dotfiles/private/zshrc"
+    source "$HOME/dotfiles/private/zshrc"
 fi
 
 # Source all the command/filetype aliases
