@@ -21,6 +21,7 @@ i3-wm
 i3lock
 iftop
 iotop
+ipython
 keepass
 libnotify
 lightdm
@@ -36,10 +37,13 @@ openssh
 openvpn
 os-prober
 pavucontrol
+powerline
 pulseaudio
 pulseaudio-alsa
+python-ipdb
 python-neovim
 python-pip
+python-pudb
 python2-neovim
 python2-pip
 reflector
@@ -62,5 +66,7 @@ xorg-server
 xorg-xdpyinfo
 xorg-xrandr
 xorg-xrdb
+xorg-xsetroot
 xsel
+zip
 zsh

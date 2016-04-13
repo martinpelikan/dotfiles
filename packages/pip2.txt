@@ -12,8 +12,5 @@ neovim
 netsnmp-python
 packaging
 pyparsing
-rope
-ropemode
-ropevim
 six
 trollius

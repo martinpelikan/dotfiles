@@ -1,6 +1,7 @@
 blockify
 chromium-pepper-flash
 drive
+hangups-git
 i3blocks
 i3lock-wrapper
 j4-dmenu-desktop-git
@@ -12,6 +13,7 @@ openvpn-update-resolv-conf
 otf-neris
 playerctl
 reflector-timer
+silentcast
 spotify
 ttf-aller
 ttf-brill
