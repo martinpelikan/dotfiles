@@ -42,6 +42,7 @@ fi
 
 # Get proper colors for all file types
 eval `dircolors $ZDOTDIR/dircolors`
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Why on earth would you want fuzzy search here...
