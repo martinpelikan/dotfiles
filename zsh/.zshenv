@@ -8,6 +8,12 @@ case $HOST in
         : ;;
 esac
 
+VMWARE_WRAPPER=/usr/bin/vmware-user-suid-wrapper
+if [[ -x "$VMWARE_WRAPPER" ]]
+then
+    $VMWARE_WRAPPER
+fi
+
 # Used by agnoster/powerlevel9k to minify prompt length
 # zshenv only loaded at startup, so let the user at that point define the default user
 if [ -z "$SSH_CLIENT" ]

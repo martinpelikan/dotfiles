@@ -33,7 +33,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'Valloric/YouCompleteMe', { 'do': 'python2 install.py --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': 'python install.py' }
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'yssl/VIntSearch'

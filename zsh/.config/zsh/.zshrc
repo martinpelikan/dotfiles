@@ -2,15 +2,22 @@ ZSH=/usr/share/oh-my-zsh
 COMPLETION_WAITING_DOTS="true"
 plugins=(git wd last-working-dir common-aliases archlinux)
 
-ZSH_THEME="powerlevel9k"
+# Have to modify pkgbuild for powerlevel9k to install to
+# /usr/share/oh-my-zsh/themes
+ZSH_THEME="zsh-theme-powerlevel9k/powerlevel9k"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=('context' 'dir' 'vcs')
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=('status' 'time')
 
-export HISTFILE="$XDG_DATA_HOME"/zsh/history
+HISTFILEDIR="$XDG_DATA_HOME"/zsh/
+export HISTFILE="$HISTFILEDIR"/history
 HISTSIZE=10000
 SAVEHIST=100000
+if [[ ! -d $HISTFILEDIR ]]; then
+    mkdir -p "$HISTFILEDIR"
+    touch "$HISTFILE"
+fi
 
 DISABLE_AUTO_UPDATE="true"
 
@@ -23,7 +30,7 @@ compinit
 # Cache dir must be defined before oh-my-zsh.sh
 export ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
-    mkdir $ZSH_CACHE_DIR
+    mkdir -p "$ZSH_CACHE_DIR"
 fi
 
 source $ZSH/oh-my-zsh.sh
@@ -31,7 +38,7 @@ source $ZSH/oh-my-zsh.sh
 # Put any machine-specific or sensitive info here
 if [ -e "$ZDOTDIR/zshrc.private" ]
 then
-    source "$ZDOTDIR/zshrc.private"
+    source -p "$ZDOTDIR/zshrc.private"
 fi
 
 # Source all the command/filetype aliases

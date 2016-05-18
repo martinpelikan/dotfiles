@@ -50,8 +50,8 @@ yaourt -S --needed --noconfirm $(< dotfiles/packages/pacman.foreign.txt)
 
 # Get all the dotfiles
 cd dotfiles
-stow -R bin dunst git i3 i3blocks neovim pudb termite vim x zsh
-cd ..
+stow -R application bin dunst git i3 i3blocks neovim pudb termite vim x zsh
+cd -
 
 # Install the best editor
 curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
