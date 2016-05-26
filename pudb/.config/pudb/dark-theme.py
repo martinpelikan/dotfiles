@@ -69,7 +69,7 @@ palette.update({
     "literal": ("dark cyan", "default"),
     "string": ("dark cyan", "default"),
     "doublestring": ("dark cyan", "default"),
-    "singlestring": ("light blue", "default"),
+    "singlestring": ("dark cyan", "default"),
     "docstring": ("dark cyan", "default"),
     "backtick": ("light green", "default"),
     "punctuation": ("light blue", "default"),
