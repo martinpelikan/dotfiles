@@ -12,9 +12,11 @@ zsh-theme-powerlevel9k-git
 openvpn-update-resolv-conf
 otf-neris
 playerctl
+python34
 reflector-timer
 silentcast
 spotify
 ttf-aller
 ttf-brill
 ttf-envy-code-r
+whatsie

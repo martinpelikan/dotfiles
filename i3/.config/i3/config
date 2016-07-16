@@ -114,24 +114,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-    status_command      i3blocks
-    position            bottom
-    workspace_buttons   yes
-colors {
-    # tango <workclass> <border> <backg> <text>
-    focused_workspace 	$blue $darkblue $white
-    active_workspace 	$grey $darkgrey $grey
-    inactive_workspace	$black $darkblack $grey
-    urgent_workspace 	$red $darkred $white
-    background #222222
-    separator  #444444
-    statusline $darkgrey
-}
-}
-
 # Capture window, capture area.
 bindsym Shift+Print exec scrot -u -e 'mkdir -p ~/screenshots/ & mv $f ~/screenshots/'
 bindsym --release Print exec scrot -s -e 'mkdir -p ~/screenshots/ & mv $f ~/screenshots/'
@@ -149,6 +131,26 @@ bindsym $mod+Shift+Delete exec amixer -D pulse sset Master toggle
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+exec_always compton -CGb
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+    status_command      i3blocks
+    position            bottom
+    workspace_buttons   yes
+colors {
+    # tango <workclass> <border> <backg> <text>
+    focused_workspace 	$blue $darkblue $white
+    active_workspace 	$grey $darkgrey $grey
+    inactive_workspace	$black $darkblack $grey
+    urgent_workspace 	$red $darkred $white
+    background #222222
+    separator  #444444
+    statusline $darkgrey
+}
+}
 
 # j4-make-config starts here
 # tango dark

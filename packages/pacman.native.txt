@@ -2,6 +2,7 @@ alsa-utils
 bind-tools
 chromium
 cmake
+compton
 cscope
 ctags
 cups
@@ -46,6 +47,7 @@ python-pip
 python-pudb
 python2-neovim
 python2-pip
+qt4
 reflector
 remmina
 rsync
