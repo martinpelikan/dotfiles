@@ -31,7 +31,7 @@ elif hash vim 2>/dev/null; then
 fi
 
 # Custom binaries go in ~/bin
-export PATH=$PATH:$HOME/bin
+export PATH=$HOME/bin:$PATH
 # This is a lie, but needed to make some apps happy...
 export TERM='xterm-256color'
 # For gdrive
