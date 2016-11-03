@@ -6,7 +6,7 @@ ideal dev environment in a minimal Arch install.
 These steps are meant as a reminder for me, not as a
 [general guide](https://wiki.archlinux.org/index.php/beginners'_guide).
 
-This was mostly tested/executed in a VM environment, YMMV (Piping to shell from the Interwebs? What can possibly go wring?)
+This was mostly tested/executed in a VM environment, YMMV (Piping to shell from the Interwebs? What can possibly go wrong?)
 ```Shell
 curl -fLo "01_install.sh" https://raw.githubusercontent.com/martinpelikan/dotfiles/master/scripts/01_install.sh
 bash ./01_install.sh
