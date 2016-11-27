@@ -6,7 +6,8 @@ Plug 'bps/vim-textobj-python'
 Plug 'bruno-/vim-man'
 Plug 'christoomey/vim-sort-motion'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'frankier/neovim-colors-solarized-truecolor-only'
+Plug 'altercation/vim-colors-solarized'
+Plug 'godlygeek/tabular'
 Plug 'henrik/vim-indexed-search'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'JCLiang/vim-cscope-utils'
@@ -23,6 +24,7 @@ Plug 'python-rope/ropevim', { 'on': 'RopeOpenProject' }
 Plug 'rking/ag.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'shime/vim-livedown'
 Plug 'simnalamburt/vim-mundo'
 Plug 'tell-k/vim-autopep8'
 Plug 'tpope/vim-commentary'
@@ -42,9 +44,9 @@ call plug#end()
 let g:python_host_prog='/usr/bin/python2'
 let g:python3_host_prog='/usr/bin/python3'
 " True colour solarized.
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colorscheme solarized
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
+colorscheme solarized
 " Enable persistent undo history and backups (basically a whole VCS).
 set backup undofile
 " Move tempfile clutter out of pwd
