@@ -47,7 +47,7 @@ sudo pacman -S infinality-bundle
 
 From the dotfiles directory, run:
 ```Shell
-stow -R bin dunst git i3 i3blocks neovim pudb termite vim x zsh
+stow -R bin compton dunst git i3 i3blocks neovim pudb termite vim x zsh
 ```
 
 ## vim/neovim
@@ -75,5 +75,7 @@ The [i3config](./i3/.i3/config) is templated using
 j4-make-config tango-dark
 ```
 
-## tmux
-TODO / investigate
+## TODO
+* https://github.com/tmux/tmux
+* https://github.com/jwilm/alacritty
+* https://davedavenport.github.io/rofi/
