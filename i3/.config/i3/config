@@ -60,8 +60,8 @@ bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+9 workspace www
+bindsym $mod+0 workspace IM
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -72,8 +72,8 @@ bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+9 move container to workspace www
+bindsym $mod+Shift+0 move container to workspace IM
 
 # scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -127,12 +127,21 @@ bindsym $mod+Shift+End exec amixer -D pulse sset Master 5%-
 
 bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
 bindsym $mod+Shift+Delete exec amixer -D pulse sset Master toggle
+
 # Toggle play/pause, next, previous
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-exec_always compton -CGb
+exec --no-startup-id compton
+
+assign [class="^Chromium$"] → www
+assign [class="^Hangups$"] → IM
+assign [class="^Slack$"] → IM
+assign [class="^Whatsie$"] → IM
+
+# Toggle workspace display output
+bindsym $mod+x move workspace to output right
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

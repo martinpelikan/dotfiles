@@ -57,7 +57,6 @@ pacnativebackup() {
             name != "linux-headers" &&
             name != "playonlinux" &&
             name != "sane" &&
-            name != "skype" &&
             name != "virtualbox" &&
             name != "virtualbox-guest-utils" &&
             name != "yaourt" \

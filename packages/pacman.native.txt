@@ -1,4 +1,5 @@
 alsa-utils
+augeas
 bind-tools
 chromium
 cmake
@@ -11,6 +12,7 @@ dnsmasq
 dosfstools
 dunst
 evince
+firefox
 freerdp
 ghostscript
 git
@@ -34,6 +36,10 @@ mtr
 namcap
 neovim
 ntfs-3g
+ntp
+nvidia
+nvidia-libgl
+nvidia-settings
 openssh
 openvpn
 os-prober
@@ -45,6 +51,9 @@ python-ipdb
 python-neovim
 python-pip
 python-pudb
+python-py
+python-pytest
+python-tox
 python2-neovim
 python2-pip
 qt4
@@ -53,7 +62,9 @@ remmina
 rsync
 samba
 scrot
+slack-desktop
 sshfs
+steam
 stow
 strace
 sysstat
@@ -62,10 +73,14 @@ tk
 traceroute
 transmission-gtk
 ttf-ubuntu-font-family-ib
+ttf-wqy-zenhei-ibx
+unrar
+unzip
 vlc
 whois
 xorg-server
 xorg-xdpyinfo
+xorg-xprop
 xorg-xrandr
 xorg-xrdb
 xorg-xsetroot

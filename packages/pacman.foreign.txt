@@ -8,15 +8,15 @@ j4-dmenu-desktop-git
 j4-make-config-git
 keepass-plugin-http
 oh-my-zsh-git
-zsh-theme-powerlevel9k-git
 openvpn-update-resolv-conf
 otf-neris
 playerctl
+plex-media-server
 python34
 reflector-timer
-silentcast
 spotify
 ttf-aller
 ttf-brill
 ttf-envy-code-r
 whatsie
+zsh-theme-powerlevel9k-git

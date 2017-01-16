@@ -1,0 +1,41 @@
+call plug#begin('~/.config/nvim/plugged')
+Plug 'airblade/vim-gitgutter'
+Plug 'benekastah/neomake'
+Plug 'bling/vim-airline'
+Plug 'bps/vim-textobj-python'
+Plug 'bruno-/vim-man'
+Plug 'christoomey/vim-sort-motion'
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'altercation/vim-colors-solarized'
+Plug 'godlygeek/tabular'
+Plug 'henrik/vim-indexed-search'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'JCLiang/vim-cscope-utils'
+Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeToggle' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-completion --key-bindings --no-update-rc' }
+Plug 'junegunn/fzf.vim'
+Plug 'kana/vim-textobj-user'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'majutsushi/tagbar'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'plasticboy/vim-markdown'
+Plug 'python-rope/ropevim', { 'on': 'RopeOpenProject' }
+Plug 'rking/ag.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'shime/vim-livedown'
+Plug 'simnalamburt/vim-mundo'
+Plug 'tell-k/vim-autopep8'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'Valloric/YouCompleteMe', { 'do': 'python install.py' }
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'yssl/VIntSearch'
+call plug#end()

@@ -8,6 +8,7 @@ xset dpms 1200 0 0
 setxkbmap -option ctrl:nocaps
 # Need to load this before i3, since it uses this with sensible-terminal
 export TERMINAL=termite
+
 # Basically just urxvt settings, may delete later...
 [[ -f ~/.Xresources ]] && xrdb -I$HOME -merge ~/.Xresources
 
@@ -19,6 +20,3 @@ fi
 if [ -z "$SSH_AUTH_SOCK" ] || [ -z "$SSH_AGENT_PID" ]; then
     eval $(ssh-agent)
 fi
-
-connectedOutputs=$(xrandr | grep " connected" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/")
-[[ $connectedOutputs =~ "VGA-0" ]] && [[ $connectedOutputs =~ "VGA-1" ]] && xrandr --output VGA-0 --auto --left-of VGA-1
