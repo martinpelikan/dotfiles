@@ -1,6 +1,7 @@
 blockify
 chromium-pepper-flash
 drive
+fonts-meta-extended-lt
 hangups-git
 i3blocks
 i3lock-wrapper
@@ -10,13 +11,16 @@ keepass-plugin-http
 oh-my-zsh-git
 openvpn-update-resolv-conf
 otf-neris
+pkgbrowser
 playerctl
 plex-media-server
 python34
 reflector-timer
 spotify
+t1-cursor-ib
 ttf-aller
 ttf-brill
 ttf-envy-code-r
+ttf-gelasio-ib
 whatsie
 zsh-theme-powerlevel9k-git

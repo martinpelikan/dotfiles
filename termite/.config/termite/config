@@ -1,5 +1,5 @@
 [options]
-font = Ubuntu Mono 12
+font = UbuntuMono Nerd Font 12
 scrollback_lines = 250000
 
 # Solarized dark color scheme

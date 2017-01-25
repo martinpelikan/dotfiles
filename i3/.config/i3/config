@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font pango:Ubuntu Mono 13
+font pango:UbuntuMono Nerd Font 13
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, if you need a lot of unicode glyphs or

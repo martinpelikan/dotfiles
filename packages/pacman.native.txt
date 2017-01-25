@@ -1,6 +1,7 @@
 alsa-utils
 augeas
 bind-tools
+cairo
 chromium
 cmake
 compton
@@ -13,7 +14,9 @@ dosfstools
 dunst
 evince
 firefox
+fontconfig
 freerdp
+freetype2
 ghostscript
 git
 go
@@ -72,12 +75,12 @@ termite
 tk
 traceroute
 transmission-gtk
-ttf-ubuntu-font-family-ib
-ttf-wqy-zenhei-ibx
+ttf-ubuntu-font-family
 unrar
 unzip
 vlc
 whois
+wqy-zenhei
 xorg-server
 xorg-xdpyinfo
 xorg-xprop
