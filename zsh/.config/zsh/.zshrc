@@ -8,7 +8,8 @@ ZSH_THEME="zsh-theme-powerlevel9k/powerlevel9k"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=('context' 'dir' 'vcs')
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=('status' 'time')
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=('virtualenv' 'status' 'time')
+POWERLEVEL9K_STATUS_VERBOSE=false
 
 HISTFILEDIR="$XDG_DATA_HOME"/zsh/
 export HISTFILE="$HISTFILEDIR"/history

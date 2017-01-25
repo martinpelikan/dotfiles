@@ -1,3 +1,4 @@
+alacritty-git
 blockify
 chromium-pepper-flash
 drive
@@ -11,11 +12,13 @@ keepass-plugin-http
 oh-my-zsh-git
 openvpn-update-resolv-conf
 otf-neris
+package-query
 pkgbrowser
 playerctl
 plex-media-server
 python34
 reflector-timer
+slack-desktop
 spotify
 t1-cursor-ib
 ttf-aller
@@ -23,4 +26,5 @@ ttf-brill
 ttf-envy-code-r
 ttf-gelasio-ib
 whatsie
-zsh-theme-powerlevel9k-git
+yaourt
+zsh-theme-powerlevel9k
