@@ -2,7 +2,7 @@
 	email = martinpelikan@users.noreply.github.com
 	name = Martin Pelikan
 [push]
-	default = simple
+	default = current
 [mergetool]
 	path = nvim
 [merge]
