@@ -25,8 +25,6 @@ nn <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
 nn <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nn <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nn <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-" F-key bindings
-nn <F12> :Neomake<CR>
 " Until ex mode dies in a fire: https://github.com/neovim/neovim/issues/1089
 nn Q :qa<CR>
 
