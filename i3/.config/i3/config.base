@@ -95,7 +95,7 @@ bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the suspend shor
 bindsym $mod+Shift+p exec i3lock-wrapper
 
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -fn 'Ubuntu Mono'"
+bindsym $mod+d exec --no-startup-id "rofi -combi-modi window,drun -show combi -modi combi"
 
 mode "resize" {
         bindsym j resize shrink width 10 px or 10 ppt

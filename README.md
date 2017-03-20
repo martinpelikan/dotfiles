@@ -66,7 +66,6 @@ j4-make-config tango-dark
 ```
 
 ## TODO
+* Use [Polybar](https://github.com/jaagr/polybar) instead of i3bar
 * Use [tmux](https://github.com/tmux/tmux) and [alacritty](https://github.com/jwilm/alacritty) instead of Termite
-* Use [rofi](https://davedavenport.github.io/rofi/) and fzf instead of j4-dmenu
-* use [Polybar](https://github.com/jaagr/polybar) instead of i3bar
 * Use [Ansible](https://www.ansible.com/) instead of my setup scripts
