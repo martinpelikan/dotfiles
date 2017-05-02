@@ -138,9 +138,12 @@ bindsym XF86AudioPrev exec playerctl previous
 exec --no-startup-id compton
 
 assign [class="^Chromium$"] → 9:www
+assign [class="^Chromium-browser$"] → 9:www
 assign [class="^Hangups$"] → 0:IM
 assign [class="^Slack$"] → 0:IM
 assign [class="^Whatsie$"] → 0:IM
+
+no_focus [class="^Chromium-browser$"]
 
 # Toggle workspace display output
 bindsym $mod+x move workspace to output right
