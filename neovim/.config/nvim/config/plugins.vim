@@ -18,3 +18,8 @@ let g:sort_motion_flags = "ui"
 let g:ag_working_path_mode="r"
 " Enable deoplete
 let g:deoplete#enable_at_startup = 1
+" ALE
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_lint_on_insert_leave = 1
+let g:ale_python_mypy_options = '--ignore-missing-imports'

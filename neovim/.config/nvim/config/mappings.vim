@@ -16,6 +16,9 @@ nn <M-n> :silent! VScnext<CR>
 nn g\ :VIntSearchGrepCursor n l<CR><CR>
 " Silver searcher
 nn <M-f> :Ag<CR>
+" ALE
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " Cscope shortcuts
 nn <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
 nn <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
@@ -47,10 +50,12 @@ aug END
 
 aug special_types
     au BufNewFile,BufRead *.tac,master.cfg setlocal ft=python  " buildbot
+    au BufNewFile,BufRead *.ksy setlocal ft=yaml
     au BufNewFile,BufRead .xprofile setlocal ft=sh
     au BufNewFile,BufRead README setlocal ft=rst
 aug END
 
 aug special_formats
     au FileType xml setl sw=2 sts=2 et
+    au FileType yaml setl sw=2 sts=2 et
 aug END
