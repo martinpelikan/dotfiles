@@ -1,1 +1,7 @@
 neovim/.config/nvim/.netrwhist
+*.cache
+__pycache__
+*.desktop
+*.list
+spell/
+gitk
