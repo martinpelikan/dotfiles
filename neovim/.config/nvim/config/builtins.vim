@@ -23,3 +23,5 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 set mouse=
 " Grep-like tools should not match pyc files, or other clutter for that matter
 set wildignore+=*.pyc,*.bak,*/tmp/*,*.so,*.swp,*.zip
+:highlight SignColumn guibg=darkgrey
+

@@ -1,8 +1,9 @@
-nn <C-p> :FZF<CR>
+" Fuzzy search file list
+nn <C-p> :Files<CR>
+" Fuzzy search file contents
+nn <M-p> :Ag<CR>
 " We basically have an IDE now
 nn <Leader>b :TagbarToggle<CR>
-" Silver searcher
-nn <M-f> :Ag<CR>
 " ALE
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
