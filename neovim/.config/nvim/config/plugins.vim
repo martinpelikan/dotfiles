@@ -1,13 +1,15 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug '/usr/share/vim/vimfiles/' " FZF support, installed via package manager
+Plug 'Konfekt/FastFold'
+Plug 'Konfekt/FoldText'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'frankier/neovim-colors-solarized-truecolor-only'
 Plug 'bling/vim-airline'
 Plug 'bps/vim-textobj-python'
 Plug 'christoomey/vim-sort-motion'
 Plug 'dag/vim-fish'
 Plug 'davidhalter/jedi'
 Plug 'davidhalter/jedi-vim'
+Plug 'frankier/neovim-colors-solarized-truecolor-only'
 Plug 'godlygeek/tabular'
 Plug 'henrik/vim-indexed-search'
 Plug 'hynek/vim-python-pep8-indent'
@@ -23,6 +25,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'shime/vim-livedown'
 Plug 'simnalamburt/vim-mundo'
 Plug 'tell-k/vim-autopep8'
+Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
@@ -41,6 +44,12 @@ set termguicolors
 set background=dark
 colorscheme solarized
 
+" Folding
+set foldlevel=1
+nmap zuz <Plug>(FastFoldUpdate)
+let g:fastfold_savehook = 1
+let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 " Buffers > Tabs, once you can see them
 let g:airline#extensions#tabline#enabled = 1
 " Use the pretty fonts
