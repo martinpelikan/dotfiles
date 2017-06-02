@@ -1,4 +1,6 @@
 set -x FZF_LEGACY_KEYBINDINGS 0
+set -x fish_key_bindings fish_hybrid_key_bindings
+#bind \ed kill-word
 
 set -x XDG_DATA_HOME $HOME/.local/share
 set -x XDG_CONFIG_HOME $HOME/.config
