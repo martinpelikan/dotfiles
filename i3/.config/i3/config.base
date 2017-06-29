@@ -91,8 +91,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # suspend
 bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the suspend shortcut. Do you really want to suspend?' -b 'Yes, suspend' 'i3lock && systemctl suspend'"
 # Lock screen
-#bindsym $mod+Shift+p exec i3lock -c 000000
-bindsym $mod+Shift+p exec i3lock-wrapper
+bindsym $mod+Shift+p exec i3lock -c 000000
 
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+d exec --no-startup-id "rofi -combi-modi window,drun -show combi -modi combi"
@@ -116,9 +115,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Capture window, capture area.
-bindsym Shift+Print exec scrot -u -e 'mkdir -p ~/screenshots/ & mv $f ~/screenshots/'
-bindsym --release Print exec scrot -s -e 'mkdir -p ~/screenshots/ & mv $f ~/screenshots/'
+# Capture immediately, with delay, to clipboard
+bindsym --release Print exec escrotum -s '~/screenshots/%Y-%m-%d-%H:%M:%S.png'
+bindsym Shift+Print exec escrotum -s --selection-delay 3000 '~/screenshots/%Y-%m-%d-%H:%M:%S.png'
+bindsym Control+Print exec escrotum -s -C
 
 # Volume controls.
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
