@@ -47,14 +47,14 @@ function $fisher_cmd_name -d "fish plugin manager"
                     to your ~/.config/fish/config.fish:
 
                     &for file in ~/.config/fish/conf.d/*.fish&
-                    	&source $file&
+                    	&source \$file&
                     &end&
 
                 "
             end
     end
 
-    set -g fisher_version "2.12.0"
+    set -g fisher_version "2.13.0"
     set -g fisher_spinners ⠋ ⠙ ⠹ ⠸ ⠼ ⠴ ⠦ ⠧ ⠇ ⠏
     set -g __fisher_stdout /dev/stdout
     set -g __fisher_stderr /dev/stderr
@@ -117,7 +117,7 @@ function $fisher_cmd_name -d "fish plugin manager"
     command mkdir -p {"$fish_path","$fish_config"}/{conf.d,functions,completions} "$fisher_config" "$fisher_cache"
     or return 1
 
-    set -l completions "$fish_config/completions/$fisher_cmd_name.fish"
+    set -l completions "$fish_path/completions/$fisher_cmd_name.fish"
 
     if test ! -e "$completions"
         echo "$fisher_cmd_name --complete" > "$completions"
@@ -1644,26 +1644,28 @@ function __fisher_plugin_get_url_info -a option
         return
     end
 
-    command cat {$argv}/.git/config ^ /dev/null | command awk -v option="$option" '
-        /url/ {
-            n = split($3, s, "/")
+    for dir in $argv
+        git -C $dir config remote.origin.url ^ /dev/null | command awk -v option="$option" '
+            {
+                n = split($0, s, "/")
 
-            if ($3 ~ /https:\/\/gist/) {
-                printf("# %s\n", $3)
-                next
+                if ($0 ~ /https:\/\/gist/) {
+                    printf("# %s\n", $0)
+                    next
+                }
+
+                if (option == "--dirname") {
+                    printf("%s\n", s[n - 1])
+
+                } else if (option == "--basename") {
+                    printf("%s\n", s[n])
+
+                } else {
+                    printf("%s/%s\n", s[n - 1], s[n])
+                }
             }
-
-            if (option == "--dirname") {
-                printf("%s\n", s[n - 1])
-
-            } else if (option == "--basename") {
-                printf("%s\n", s[n])
-
-            } else {
-                printf("%s/%s\n", s[n - 1], s[n])
-            }
-        }
-    '
+        '
+    end
 end
 
 
