@@ -1,8 +1,9 @@
 alsa-utils
 augeas
+base
+base-devel
 bind-tools
 blockify
-bzr
 cairo
 chromium
 cmake
@@ -40,7 +41,6 @@ i3-wm
 iftop
 iotop
 ipython
-j4-dmenu-desktop-git
 j4-make-config-git
 keepassxc-git
 libnotify
@@ -69,7 +69,6 @@ parted
 pavucontrol
 pepper-flash
 pkgbrowser
-playerctl
 plex-media-server
 polybar
 powerline
@@ -91,13 +90,11 @@ qt4
 reflector
 reflector-timer
 remmina
-ripgrep
 rofi
 rsync
 ruby
 samba
 sane
-sbt
 slack-desktop
 spotify
 sshfs
@@ -110,7 +107,6 @@ termite
 the_silver_searcher
 tk
 tmux
-traceroute
 transmission-gtk
 ttf-aller
 ttf-brill
@@ -128,7 +124,6 @@ xorg-xdpyinfo
 xorg-xinput
 xorg-xprop
 xorg-xrandr
-xorg-xrdb
 xorg-xsetroot
 xournal
 xsel
