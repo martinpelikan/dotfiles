@@ -1,3 +1,3 @@
-function S --description 'alias S sack'
-	sack  $argv;
+function S --description 'Quick command for sag / F'
+	sag  $argv;
 end
