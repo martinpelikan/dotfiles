@@ -1,4 +1,4 @@
-function paclist --description 'List pacman explicitly installed packages not part of base/base-devel'
+function pacfreeze --description 'List pacman explicitly installed packages not part of base/base-devel'
     echo base > /tmp/installedpackages.txt
     echo base-devel >> /tmp/installedpackages.txt
     pacman -Qqe >> /tmp/installedpackages.txt
