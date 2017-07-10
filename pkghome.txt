@@ -127,5 +127,4 @@ xorg-xrandr
 xorg-xsetroot
 xournal
 xsel
-yaourt
 zip
