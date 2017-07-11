@@ -16,5 +16,8 @@ set -x VISUAL nvim
 set theme_color_scheme solarized-dark
 set theme_nerd_fonts yes
 
+status --is-interactive; and source (pyenv init -|psub)
+status --is-interactive; and source (pyenv virtualenv-init -|psub)
+
 # rg seems to be flaky in some circumstances
 # set -x FZF_DEFAULT_COMMAND 'rg --files --hidden'

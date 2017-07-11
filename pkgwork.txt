@@ -70,9 +70,9 @@ pepper-flash
 pkgbrowser
 pulseaudio
 pulseaudio-alsa
+pyenv
 python2-neovim
 python2-pip
-python34
 python-ipdb
 python-kaitaistruct
 python-neovim
