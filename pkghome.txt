@@ -48,6 +48,7 @@ lightdm
 lightdm-gtk-greeter
 linux-headers
 lm_sensors
+lostfiles
 lsof
 messengerfordesktop
 mlocate
@@ -74,9 +75,10 @@ polybar
 powerline
 pulseaudio
 pulseaudio-alsa
+pyenv
+pyenv-virtualenv-git
 python2-neovim
 python2-pip
-python34
 python-ipdb
 python-neovim
 python-pip
