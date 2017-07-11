@@ -1,3 +1,6 @@
+let g:python_host_prog = '/home/mpelikan/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/home/mpelikan/.pyenv/versions/neovim3/bin/python'
+
 set background=dark
 " Enable persistent undo history and backups (basically a whole VCS).
 set backup undofile
