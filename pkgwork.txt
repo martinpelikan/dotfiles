@@ -3,7 +3,6 @@ augeas
 base
 base-devel
 bind-tools
-blockify
 cairo
 chromium
 cmake
@@ -19,7 +18,6 @@ escrotum-git
 evince
 firefox-esr-bin
 fish
-flake8
 fontconfig
 fonts-meta-extended-lt
 freerdp
@@ -32,7 +30,6 @@ git
 go
 grub
 gsfonts
-hangups-git
 hipchat
 htop
 i3blocks
@@ -43,7 +40,6 @@ iotop
 j4-make-config-git
 keepassxc-git
 libnotify
-libvirt-python3
 lightdm
 lightdm-gtk-greeter
 linux-headers
@@ -52,7 +48,6 @@ lsof
 messengerfordesktop
 mlocate
 mtr
-mypy
 namcap
 neovim
 ntfs-3g
@@ -72,19 +67,6 @@ pulseaudio
 pulseaudio-alsa
 pyenv
 pyenv-virtualenv-git
-python2-neovim
-python2-pip
-python-ipdb
-python-kaitaistruct
-python-neovim
-python-pip
-python-pudb
-python-pylint
-python-pytest
-python-seaborn
-python-selenium
-python-tox
-python-yaml
 qt4
 reflector
 reflector-timer
