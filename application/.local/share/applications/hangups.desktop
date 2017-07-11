@@ -1,7 +1,8 @@
 [Desktop Entry]
 Name=Hangups
 Comment=Google Hangouts client for CLI
-Exec=termite --class=Hangups -e hangups
+Path=/home/mpelikan/.pyenv/versions/hangups/bin
+Exec=termite --class=Hangups -e ./hangups
 Terminal=false
 Type=Application
 Categories=Application;
