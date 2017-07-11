@@ -1,6 +1,6 @@
 # dotfiles
-This repository tracks my dotfiles and provides scripts that set up a base Arch
-install and bootstrap my dev setup.
+This repository tracks my dotfiles and provides scripts and helpers that set up
+a base Arch install and bootstrap my dev setup.
 
 ## Basic Arch setup guide
 To set up a base Arch install, you should follow the [Installation
@@ -17,7 +17,7 @@ bash ./01_install.sh
 ```
 
 ## Package Tracking
-I track installed packages in [packages.txt](./packages.txt) as a way to show
+I track installed packages in [pkgwork.txt](./pkgwork.txt) as a way to show
 what tools I'm currently using, and as a means to restore my setup without
 having to remember and explicitly install everything. This list can be
 generated using `paclist` defined in
@@ -37,10 +37,25 @@ From the dotfiles directory, run:
 stow -R application bin compton dircolors dunst fish git i3 i3blocks neovim packages pudb sack scripts termite vim x
 ```
 
-## neovim/vim
+## pyenv
+Make a habit of using [pyenv](https://github.com/pyenv/pyenv) with
+[pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv) to install any applications.
+
+For example:
+```Shell
+pyenv install 3.6.1
+pyenv virtualenv 3.6.1 hangups
+pyenv activate hangups
+pip install hangups
+```
+
+## neovim
+Create a venv for `neovim2` and `neovim3` as described in the
+[deoplete-jedi wiki](https://github.com/zchee/deoplete-jedi/wiki/Setting-up-Python-for-Neovim#using-virtual-environments)
+
 Bootstrap the vim-plug plugin manager:
 ```Shell
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+curl -fLo $XDG_CONFIG_HOME/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
