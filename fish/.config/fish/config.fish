@@ -13,6 +13,8 @@ set -x MANPAGER "nvim -c 'set ft=man' -"
 set -x EDITOR nvim
 set -x VISUAL nvim
 
+set -x PIP_REQUIRE_VIRTUALENV true
+
 set theme_color_scheme solarized-dark
 set theme_nerd_fonts yes
 
