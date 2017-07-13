@@ -1,5 +1,4 @@
 let g:python_host_prog = '/home/mpelikan/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '/home/mpelikan/.pyenv/versions/neovim3/bin/python'
 
 set background=dark
 " Enable persistent undo history and backups (basically a whole VCS).
@@ -26,5 +25,4 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 set mouse=
 " Grep-like tools should not match pyc files, or other clutter for that matter
 set wildignore+=*.pyc,*.bak,*/tmp/*,*.so,*.swp,*.zip
-:highlight SignColumn guibg=darkgrey
-
+highlight SignColumn guibg=darkgrey
