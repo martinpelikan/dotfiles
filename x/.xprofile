@@ -1,5 +1,5 @@
 # Sensible keyboard autorepeat delay/speed
-xset r rate 200 40
+xset r rate 400 50
 # Sensible cursor acceleration/speed
 xset m 5/3 0
 # Monitor goes into standby after 20 minutes, does not turn suspend/turn off
