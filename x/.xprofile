@@ -7,7 +7,7 @@ xset dpms 1200 0 0
 # Swap Esc and Caps Lock
 setxkbmap -option "caps:swapescape"
 # Need to load this before i3, since it uses this with sensible-terminal
-export TERMINAL=termite
+export TERMINAL=kitty
 
 # Run all the VBox guest addition features
 if hash VBoxClient-all 2>/dev/null; then
