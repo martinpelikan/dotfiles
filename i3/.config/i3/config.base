@@ -115,10 +115,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Capture immediately, with delay, to clipboard
-bindsym --release Print exec escrotum -s --selection-delay 250 '~/screenshots/%Y-%m-%d-%H:%M:%S.png'
-bindsym Shift+Print exec escrotum -s --selection-delay 3000 '~/screenshots/%Y-%m-%d-%H:%M:%S.png'
-bindsym Control+Print exec escrotum -s -C --selection-delay 250
+bindsym Print exec maim -s --hidecursor ~/screenshots/$(date +%Y-%m-%d-%H:%M:%S).png
+bindsym Control+Print exec maim -s --hidecursor | xclip -selection clipboard -t image/png
 
 # Volume controls.
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
@@ -131,9 +129,9 @@ bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
 bindsym $mod+Shift+Delete exec amixer -D pulse sset Master toggle
 
 # Toggle play/pause, next, previous
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl --player=spotify play-pause
+bindsym XF86AudioNext exec playerctl --player=spotify next
+bindsym XF86AudioPrev exec playerctl --player=spotify previous
 
 exec --no-startup-id compton
 
