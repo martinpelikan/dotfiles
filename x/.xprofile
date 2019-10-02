@@ -9,6 +9,8 @@ setxkbmap -option "caps:swapescape"
 # Need to load this before i3, since it uses this with sensible-terminal
 export TERMINAL=kitty
 
+feh --randomize --bg-fill ~/.wallpaper/*
+
 # Run all the VBox guest addition features
 if hash VBoxClient-all 2>/dev/null; then
     VBoxClient-all
