@@ -14,7 +14,7 @@ set -x EDITOR nvim
 set -x VISUAL nvim
 
 set theme_color_scheme solarized-dark
-# set theme_nerd_fonts yes
+set theme_nerd_fonts yes
 
 # set -x PIP_REQUIRE_VIRTUALENV true
 # status --is-interactive; and source (pyenv init -|psub)
