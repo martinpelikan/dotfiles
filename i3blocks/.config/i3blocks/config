@@ -1,75 +1,63 @@
-command=/usr/lib/i3blocks/$BLOCK_NAME
-separator_block_width=15
-markup=pango
+command=/usr/lib/i3blocks/$BLOCK_NAME/$BLOCK_NAME
+
+[iface]
+label= 
+interval=10
 
 [bandwidth]
 interval=5
 
-[iface]
-label=
-interval=10
-separator=false
-
-[wifi]
-interval=10
-separator=false
-
 [volume]
-label=
+label= 
 instance=Master
 interval=once
 signal=10
 
 [memory]
-label=
-separator=false
+label= 
 interval=30
 
 [disk]
-label=
+label= 
 instance=/home
-separator=false
 interval=30
 
 [disk]
-label=
+label= 
 instance=/
-separator=true
 interval=30
 
 [cpu_usage]
-label=CPU
+label=CPU 
 interval=10
 min_width=CPU xxx.yy%
-separator=false
+
+[gpu-load]
+label=GPU 
+interval=10
+short_text=
 
 [load_average]
-label=
+label= 
 interval=10
-separator=false
 
 [temperature]
 interval=10
 min_width=100.0dC
 
-[openvpn]
-label=VPN:
-interval=20
-command=$HOME/.config/i3blocks/openvpn.sh
-min_width=VPN: DOWN
-
 [time]
-label=
+label= 
 command=date '+%H:%M:%S'
 interval=1
 color=#00ffff
-separator=false
 
 [date-icon]
 full_text=
 command=chromium https://calendar.google.com/ > /dev/null 2>&1
-separator=false
 
 [date]
 command=date '+%d-%m-%Y'
 interval=500
+
+[shutdown_menu]
+full_text= 
