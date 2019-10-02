@@ -2,7 +2,7 @@
 Name=Hangups
 Comment=Google Hangouts client for CLI
 Path=/home/mpelikan/.pyenv/versions/hangups/bin
-Exec=termite --class=Hangups -e ./hangups
+Exec=i3-sensible-terminal --class=Hangups ./hangups
 Terminal=false
 Type=Application
 Categories=Application;
