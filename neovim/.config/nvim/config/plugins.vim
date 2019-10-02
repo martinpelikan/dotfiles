@@ -1,5 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug '/usr/share/vim/vimfiles/' " FZF support, installed via package manager
+Plug 'vim-scripts/deb.vim'
 Plug 'Konfekt/FastFold'
 Plug 'Konfekt/FoldText'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

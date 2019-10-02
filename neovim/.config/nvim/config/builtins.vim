@@ -1,12 +1,13 @@
+let g:python3_host_prog = '/home/mpelikan/.pyenv/versions/neovim3/bin/python'
 let g:python_host_prog = '/home/mpelikan/.pyenv/versions/neovim2/bin/python'
 
 set background=dark
 " Enable persistent undo history and backups (basically a whole VCS).
 set backup undofile
 " Move tempfile clutter out of pwd
-set backupdir=~/.config/nvim/backups
-set directory=~/.config/nvim/swaps
-set undodir=~/.config/nvim/undo
+set backupdir=$XDG_CACHE_HOME/nvim/backups//
+set directory=$XDG_CACHE_HOME/nvim/swaps//
+set undodir=$XDG_CACHE_HOME/nvim/undo//
 " Default of 4000ms is a bit too slow for gitgutter
 set updatetime=750
 " Use \C or PartialCaps to ensure case sensitive searches
