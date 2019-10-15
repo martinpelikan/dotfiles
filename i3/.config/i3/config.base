@@ -3,7 +3,7 @@ set $mod Mod4
 set_from_resource $PRIMARY_MONITOR i3.WindowManager.primaryMonitor DP-4
 set_from_resource $SECONDARY_MONITOR i3.WindowManager.secondaryMonitor DP-0
 
-font pango:UbuntuMonoDerivativePowerline Nerd Font 13
+font pango:FuraCode Nerd Font 13
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -51,30 +51,32 @@ bindsym $mod+a focus parent
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
+bindsym $mod+3 workspace 3:game
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9:www
+bindsym $mod+8 workspace 8:pw
+bindsym $mod+9 workspace 9:web
 bindsym $mod+0 workspace 0:IM
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+3 move container to workspace 3:game
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9:www
+bindsym $mod+Shift+8 move container to workspace 8:pw
+bindsym $mod+Shift+9 move container to workspace 9:web
 bindsym $mod+Shift+0 move container to workspace 0:IM
 
 workspace 1 output $PRIMARY_MONITOR
 workspace 2 output $SECONDARY_MONITOR
-workspace "9:www" output $PRIMARY_MONITOR
+workspace "3:game" output $PRIMARY_MONITOR
+workspace "8:pw" output $SECONDARY_MONITOR
+workspace "9:web" output $PRIMARY_MONITOR
 workspace "0:IM" output $SECONDARY_MONITOR
 
 # scratchpad
@@ -86,10 +88,6 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-# suspend
-bindsym $mod+Shift+s exec "i3-nagbar -t warning -m 'You pressed the suspend shortcut. Do you really want to suspend?' -b 'Yes, suspend' 'i3lock && systemctl suspend'"
 # Lock screen
 bindsym $mod+Shift+p exec i3lock -c 000000
 
@@ -135,8 +133,14 @@ bindsym XF86AudioPrev exec playerctl --player=spotify previous
 
 exec --no-startup-id compton
 
-assign [class="^Chromium$"] → 9:www
-assign [class="^Chromium-browser$"] → 9:www
+assign [class="^Steam$"] → 3:game
+
+assign [class="^keepassxc$"] → 8:pw
+
+assign [class="^Chromium$"] → 9:web
+assign [class="^Chromium-browser$"] → 9:web
+assign [class="^firefox$"] → 9:web
+
 assign [class="^Hangups$"] → 0:IM
 assign [class="^Slack$"] → 0:IM
 assign [class="^Whatsie$"] → 0:IM
@@ -146,14 +150,12 @@ no_focus [class="^Chromium-browser$"]
 # Toggle workspace display output
 bindsym $mod+x move workspace to output right
 
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
     status_command      i3blocks
     position            bottom
     workspace_buttons   yes
-    strip_workspace_numbers yes
     # $i3-theme-bar
 }
 
