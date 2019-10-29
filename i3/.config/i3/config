@@ -115,6 +115,7 @@ bindsym $mod+r mode "resize"
 
 bindsym Print exec maim -s --hidecursor ~/screenshots/$(date +%Y-%m-%d-%H:%M:%S).png
 bindsym Control+Print exec maim -s --hidecursor | xclip -selection clipboard -t image/png
+bindsym $mod+Print exec flameshot gui
 
 # Volume controls.
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
