@@ -92,7 +92,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+p exec i3lock -c 000000
 
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+d exec --no-startup-id "rofi -combi-modi window,drun -show combi -modi combi"
+bindsym $mod+d exec --no-startup-id "rofi -combi-modi window,drun -show combi -modi combi,run,ssh -show-icons"
 
 mode "resize" {
         bindsym j resize shrink width 10 px or 10 ppt
