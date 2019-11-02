@@ -88,11 +88,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# Lock screen
-bindsym $mod+Shift+p exec i3lock -c 000000
-
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+d exec --no-startup-id "rofi -combi-modi window,drun -show combi -modi combi,run,ssh -show-icons"
+bindsym $mod+d exec "rofi -combi-modi window,drun -show combi -modi combi,run,ssh -show-icons"
 
 mode "resize" {
         bindsym j resize shrink width 10 px or 10 ppt
@@ -113,9 +110,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym Print exec maim -s --hidecursor ~/screenshots/$(date +%Y-%m-%d-%H:%M:%S).png
-bindsym Control+Print exec maim -s --hidecursor | xclip -selection clipboard -t image/png
-bindsym $mod+Print exec flameshot gui
+bindsym Print exec flameshot gui
+
+# Lock screen
+bindsym $mod+Shift+p exec i3lock -c 000000
 
 # Volume controls.
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
@@ -131,8 +129,6 @@ bindsym $mod+Shift+Delete exec amixer -D pulse sset Master toggle
 bindsym XF86AudioPlay exec playerctl --player=spotify play-pause
 bindsym XF86AudioNext exec playerctl --player=spotify next
 bindsym XF86AudioPrev exec playerctl --player=spotify previous
-
-exec --no-startup-id compton
 
 assign [class="^Steam$"] → 3:game
 
