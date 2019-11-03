@@ -110,7 +110,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym Print exec flameshot gui
+bindsym Print exec --no-startup-id flameshot gui
 
 # Lock screen
 bindsym $mod+Shift+p exec i3lock -c 000000
