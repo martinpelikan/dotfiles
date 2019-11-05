@@ -2,16 +2,18 @@
 xset r rate 400 50
 # Sensible cursor acceleration/speed
 xset m 5/3 0
-# Monitor goes into standby after 20 minutes, does not turn suspend/turn off
-xset dpms 1200 0 0
 # Swap Esc and Caps Lock
 setxkbmap -option "caps:swapescape"
 # Need to load this before i3, since it uses this with sensible-terminal
 export TERMINAL=kitty
 
+# Put monitor in standby after 5 minutes, suspend/off/screensaver disabled as they are identical
+xset +dpms dpms 300 0 0
+xset s 0 0
+
 compton &
 copyq &
-xautolock -detectsleep -time 5 -locker "i3lock --nofork -c 000000" -notify 30 -notifier "notify-send -t 10000 'LOCKING screen in 30 seconds'" &
+xss-lock --transfer-sleep-lock --notifier="notify-send --expire-time=30000 'LOCKING user inactive, locking soon'" -- i3lock -c 111111 -n &
 
 feh --randomize --bg-fill ~/.wallpaper/*
 

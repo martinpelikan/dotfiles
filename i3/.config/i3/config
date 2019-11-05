@@ -112,8 +112,8 @@ bindsym $mod+r mode "resize"
 
 bindsym Print exec --no-startup-id flameshot gui
 
-# Lock screen
-bindsym $mod+Shift+p exec i3lock -c 000000
+# Lock screen, will use xss-lock to invoke i3lock
+bindsym $mod+Shift+p exec loginctl lock-session
 
 # Volume controls.
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
