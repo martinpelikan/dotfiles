@@ -132,7 +132,7 @@ bindsym XF86AudioPrev exec playerctl --player=spotify previous
 
 assign [class="^Steam$"] → 3:game
 
-assign [class="^keepassxc$"] → 8:pw
+assign [class="^KeePassXC$"] → 8:pw
 
 assign [class="^Chromium$"] → 9:web
 assign [class="^Chromium-browser$"] → 9:web
