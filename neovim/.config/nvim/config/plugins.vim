@@ -1,45 +1,69 @@
-call plug#begin('~/.config/nvim/plugged')
-Plug '/usr/share/vim/vimfiles/' " FZF support, installed via package manager
-Plug 'vim-scripts/deb.vim'
-Plug 'Konfekt/FastFold'
-Plug 'Konfekt/FoldText'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'bling/vim-airline'
-Plug 'bps/vim-textobj-python'
-Plug 'christoomey/vim-sort-motion'
-Plug 'dag/vim-fish'
-Plug 'davidhalter/jedi'
-Plug 'davidhalter/jedi-vim'
-Plug 'frankier/neovim-colors-solarized-truecolor-only'
-Plug 'godlygeek/tabular'
-Plug 'henrik/vim-indexed-search'
-Plug 'hynek/vim-python-pep8-indent'
-Plug 'junegunn/fzf.vim'
-Plug 'justinmk/vim-dirvish'
-Plug 'justinmk/vim-sneak'
-Plug 'kana/vim-textobj-user'
-Plug 'majutsushi/tagbar'
-Plug 'mhinz/vim-signify'
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'plasticboy/vim-markdown'
-Plug 'ryanoasis/vim-devicons'
-Plug 'shime/vim-livedown'
-Plug 'simnalamburt/vim-mundo'
-Plug 'tell-k/vim-autopep8'
-Plug 'tmhedberg/SimpylFold'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'w0rp/ale'
-Plug 'wellle/targets.vim'
-Plug 'zchee/deoplete-jedi'
-call plug#end()
+if &compatible
+  set nocompatible
+endif
+
+set rtp+=/usr/share/vim/vimfiles
+
+if dein#load_state('~/.cache/dein')
+  call dein#begin(expand('~/.cache/dein'))
+
+  call dein#add('/usr/share/vim/vimfiles/')
+  call dein#add('vim-scripts/deb.vim')
+  call dein#add('Konfekt/FastFold')
+  call dein#add('Konfekt/FoldText')
+  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('bling/vim-airline')
+  call dein#add('bps/vim-textobj-python')
+  call dein#add('christoomey/vim-sort-motion')
+  call dein#add('dag/vim-fish')
+  call dein#add('davidhalter/jedi')
+  call dein#add('davidhalter/jedi-vim')
+  call dein#add('frankier/neovim-colors-solarized-truecolor-only')
+  call dein#add('godlygeek/tabular')
+  call dein#add('henrik/vim-indexed-search')
+  call dein#add('hynek/vim-python-pep8-indent')
+  call dein#add('junegunn/fzf.vim')
+  call dein#add('justinmk/vim-dirvish')
+  call dein#add('justinmk/vim-sneak')
+  call dein#add('kana/vim-textobj-user')
+  call dein#add('majutsushi/tagbar')
+  call dein#add('mhinz/vim-signify')
+  call dein#add('michaeljsmith/vim-indent-object')
+  call dein#add('ntpeters/vim-better-whitespace')
+  call dein#add('plasticboy/vim-markdown')
+  call dein#add('ryanoasis/vim-devicons')
+  call dein#add('shime/vim-livedown')
+  call dein#add('simnalamburt/vim-mundo')
+  call dein#add('tell-k/vim-autopep8')
+  call dein#add('tmhedberg/SimpylFold')
+  call dein#add('tpope/vim-commentary')
+  call dein#add('tpope/vim-eunuch')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-repeat')
+  call dein#add('tpope/vim-sensible')
+  call dein#add('tpope/vim-surround')
+  call dein#add('tpope/vim-unimpaired')
+  call dein#add('vim-airline/vim-airline-themes')
+  call dein#add('w0rp/ale')
+  call dein#add('wellle/targets.vim')
+  call dein#add('zchee/deoplete-jedi')
+
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+
+  call dein#end()
+  call dein#save_state()
+
+  " auto-install missing packages on startup
+  if dein#check_install()
+    call dein#install()
+  endif
+endif
+
+filetype plugin indent on
+syntax enable
 
 set termguicolors
 set background=dark
