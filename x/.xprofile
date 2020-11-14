@@ -1,4 +1,4 @@
-xrandr --output DVI-D-0 --mode 1920x1080 --right-of DP-4
+xrandr --output DP-0 --mode 1920x1080 --right-of DP-4
 
 # Sensible keyboard autorepeat delay/speed
 xset r rate 400 50
