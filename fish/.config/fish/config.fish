@@ -16,4 +16,4 @@ set -x VISUAL nvim
 set theme_color_scheme solarized-dark
 set theme_nerd_fonts yes
 
-source /opt/asdf-vm/asdf.fish
+source /home/mpelikan/.venv/dev/bin/activate.fish
