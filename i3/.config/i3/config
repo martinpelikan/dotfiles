@@ -3,7 +3,7 @@ set $mod Mod4
 set_from_resource $PRIMARY_MONITOR i3.WindowManager.primaryMonitor DP-4
 set_from_resource $SECONDARY_MONITOR i3.WindowManager.secondaryMonitor DP-0
 
-font pango:Ubuntu Mono 14
+font pango:Fire Code 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

@@ -1,11 +1,44 @@
 command=/usr/lib/i3blocks/$BLOCK_NAME/$BLOCK_NAME
 
+[disk]
+label=/home 
+instance=/home
+interval=30
+
+[disk]
+label=/ 
+instance=/
+interval=30
+
+[memory]
+interval=30
+
 [iface]
-label= 
 interval=10
 
 [bandwidth]
 interval=5
+min_width=IN xxxK OUT xxxK
+
+[gpu-load]
+label=GPU 
+interval=10
+short_text=
+min_width=GPU xx% xx% xx% xx%
+
+[cpu_usage]
+label=CPU 
+interval=10
+min_width=CPU xx.yy%
+
+[load_average]
+label=load 
+interval=10
+min_width=load xx.xx
+
+[temperature]
+interval=10
+min_width=100.0dC
 
 [volume]
 label= 
@@ -13,51 +46,18 @@ instance=Master
 interval=once
 signal=10
 
-[memory]
-label= 
-interval=30
-
-[disk]
-label= 
-instance=/home
-interval=30
-
-[disk]
-label= 
-instance=/
-interval=30
-
-[cpu_usage]
-label=CPU 
-interval=10
-min_width=CPU xxx.yy%
-
-[gpu-load]
-label=GPU 
-interval=10
-short_text=
-
-[load_average]
-label= 
-interval=10
-
-[temperature]
-interval=10
-min_width=100.0dC
-
-[time]
-label= 
-command=date '+%H:%M:%S'
-interval=1
-color=#00ffff
+[date]
+command=date '+%d/%m/%Y'
+interval=500
 
 [date-icon]
 full_text=
 command=chromium https://calendar.google.com/ > /dev/null 2>&1
 
-[date]
-command=date '+%d-%m-%Y'
-interval=500
+[time]
+command=date '+%H:%M:%S'
+interval=1
+color=#00ffff
 
 [shutdown_menu]
-full_text= 
+full_text=
