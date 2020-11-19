@@ -1,4 +1,5 @@
-xrandr --output DP-0 --mode 1920x1080 --right-of DP-4
+# Using /etc/X11/xorg.conf.d/20-nvidia.conf instead
+#xrandr --output DP-0 --mode 1920x1080 --right-of DP-4
 
 # Sensible keyboard autorepeat delay/speed
 xset r rate 400 50
