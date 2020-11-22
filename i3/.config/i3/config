@@ -202,9 +202,6 @@ set $darkblack 		#2E3436
 set $darkgrey 		#888A85
 set $darkwhite 		#D3D7CF
 
-# $i3-background
-exec_always --no-startup-id xsetroot -solid '#2E3436'
-
 # tango <clientclass> <border> <backg> <text> <indicator>
 client.focused          $blue $darkblue $white $blue
 client.focused_inactive $darkgrey $black $grey $darkgrey
