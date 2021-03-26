@@ -134,15 +134,12 @@ assign [class="^Steam$"] → 3:game
 
 assign [class="^KeePassXC$"] → 8:pw
 
-assign [class="^Chromium$"] → 9:web
-assign [class="^Chromium-browser$"] → 9:web
+assign [class="^google-chrome$"] → 9:web
 assign [class="^firefox$"] → 9:web
 
 assign [class="^Hangups$"] → 0:IM
 assign [class="^Slack$"] → 0:IM
 assign [class="^Whatsie$"] → 0:IM
-
-no_focus [class="^Chromium-browser$"]
 
 # Toggle workspace display output
 bindsym $mod+x move workspace to output right
@@ -154,16 +151,16 @@ bar {
     position            bottom
     workspace_buttons   yes
     tray_output primary
-colors {
-    # tango <workclass> <border> <backg> <text>
-    focused_workspace 	$blue $darkblue $white
-    active_workspace 	$grey $darkgrey $grey
-    inactive_workspace	$black $darkblack $grey
-    urgent_workspace 	$red $darkred $white
-    background #222222
-    separator  #444444
-    statusline $darkgrey
-}
+    colors {
+        # tango <workclass> <border> <backg> <text>
+        focused_workspace 	$blue $darkblue $white
+        active_workspace 	$grey $darkgrey $grey
+        inactive_workspace	$black $darkblack $grey
+        urgent_workspace 	$red $darkred $white
+        background #222222
+        separator  #444444
+        statusline $darkgrey
+    }
 }
 
 # j4-make-config starts here
